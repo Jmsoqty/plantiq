@@ -1,3 +1,19 @@
+<?php
+session_start();
+include 'php/userconfig.php';
+
+if (isset($_SESSION['otp'])) {
+    $otp = $_SESSION['otp'];
+}
+
+
+// if (isset($_SESSION['status'])) {
+//     if($_SESSION['status'] == "Logged In"){
+//         header("Location:home.php");
+//         exit();
+//     }
+// }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
