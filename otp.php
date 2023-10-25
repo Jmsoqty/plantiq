@@ -5,6 +5,9 @@ include 'php/userconfig.php';
 if (isset($_SESSION['otp'])) {
     $otp = $_SESSION['otp'];
 }
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+}
 
 
 // if (isset($_SESSION['status'])) {
@@ -30,6 +33,7 @@ if (isset($_SESSION['otp'])) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/8f7ec986ad.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
@@ -38,9 +42,27 @@ if (isset($_SESSION['otp'])) {
     <div class="card shadow">
         <h1 class="mx-auto">Forgot Password</h1>
         <div class="card-body">
-            <input type="text" class="form-control form-control-lg my-4" placeholder="Enter OTP" required>
-            <center><label>Email/<span style="color: green">Enter OTP</span>/New Password</label></center>
-            <center><a href="newpass.php" class="btn btn-success btn-lg mt-3">Submit</a></center>
+        <form method="post" action="php/otp.php">
+                <input type="hidden" name="correct_otp" value="<?php echo $otp; ?>">
+                <input type="number" class="form-control form-control-lg my-4" name="otp" placeholder="Enter OTP" required>
+                <center><label>Email/<span style="color: green">Enter OTP</span>/New Password</label></center>
+                <center><button type="submit" class="btn btn-success btn-lg mt-3">Submit</button></center>
+            </form>
+            <?php
+                // Display error messages if they were passed in the URL
+                if (isset($_GET['errors'])) {
+                    $errors = explode(',', $_GET['errors']);
+                    foreach ($errors as $error) {
+                        echo "<script>Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: '$error'
+                            });</script>";
+
+                }
+                unset($_GET['errors']);
+                }
+            ?>
         </div>
         <br><br><br>
         <div class="mx-auto">
@@ -48,6 +70,13 @@ if (isset($_SESSION['otp'])) {
         </div>
     </div>
 </div>
-
+<script>
+    if (window.performance) {
+      if (performance.navigation.type == 1) {
+        // Reloaded the page using the browser's reload button
+        window.location.href = "otp.php";
+      }
+    }
+    </script>
 </body>
 </html>

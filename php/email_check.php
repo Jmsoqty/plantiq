@@ -30,6 +30,7 @@ if (mysqli_num_rows($result) > 0) {
     
     // You should store the OTP in the database or session for validation on the OTP page.
     $_SESSION['otp'] = $otp;
+    $_SESSION['email'] = $email;
     header('Location: ../otp.php');
     exit();
 } else {

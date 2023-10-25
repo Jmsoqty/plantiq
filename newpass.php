@@ -1,3 +1,18 @@
+<?php
+session_start();
+include 'php/userconfig.php';
+
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+}
+
+// if (isset($_SESSION['status'])) {
+//     if($_SESSION['status'] == "Logged In"){
+//         header("Location:home.php");
+//         exit();
+//     }
+// }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +29,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/8f7ec986ad.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
@@ -22,10 +38,28 @@
     <div class="card shadow">
         <h1 class="mx-auto">Forgot Password</h1>
         <div class="card-body">
-            <input type="text" class="form-control form-control-lg my-4" placeholder="Enter New Password" required>
-            <input type="text" class="form-control form-control-lg my-4" placeholder="Confirm Password" required>
-            <center><label>Email/Enter OTP/<span style="color: green">New Password</span></label></center>
-            <center><a href="login.php" class="btn btn-success btn-lg mt-3">Save Changes</a></center>
+            <form action="php/reset_password.php" method="post">
+                <input type="hidden" name="email" value="<?php echo $email; ?>">
+                <input type="password" name="password" class="form-control form-control-lg my-4" placeholder="Enter New Password" required>
+                <input type="password" name="confirm_password" class="form-control form-control-lg my-4" placeholder="Confirm Password" required>
+                <center><label>Email/Enter OTP/<span style="color: green">New Password</span></label></center>
+                <center><button type="submit" class="btn btn-success btn-lg mt-3">Save Changes</button></center>
+            </form>
+            <?php
+                // Display error messages if they were passed in the URL
+                if (isset($_GET['errors'])) {
+                    $errors = explode(',', $_GET['errors']);
+                    foreach ($errors as $error) {
+                        echo "<script>Swal.fire({
+                                icon: 'error',
+                                title: 'ERROR',
+                                text: '$error'
+                            });</script>";
+
+                }
+                unset($_GET['errors']);
+                }
+            ?>
         </div>
         <br><br><br>
         <div class="mx-auto">
@@ -33,6 +67,13 @@
         </div>
     </div>
 </div>
-
+<script>
+    if (window.performance) {
+      if (performance.navigation.type == 1) {
+        // Reloaded the page using the browser's reload button
+        window.location.href = "newpass.php";
+      }
+    }
+    </script>
 </body>
 </html>
