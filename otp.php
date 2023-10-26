@@ -20,7 +20,7 @@ if (isset($_SESSION['email'])) {
 <!DOCTYPE html>
 <html>
 <head>
-<title>OTP</title>
+<title>OTPCODEEE</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="path/to/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
