@@ -113,25 +113,28 @@
 
   <!-- TOP NAV -->
 
-  <div class="top fixed-top">
+ 
     <div class="dropdown ms-4">
       <button onclick="toggleDropdown()" class="dropbtn">Device 1 <i class="fa-solid fa-caret-down ms-2"></i></button>
-
+    
       <div id="myDropdown" class="dropdown-content">
-        <a href="#">Device 2</a>
-        <a href="#">Add Device <i class="fa-solid fa-plus ms-1"></i></a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><span class="status-green"></span> Device 1</a></li>
+        <li><a href="#"><span class="status-red"></span> Device 2</a></li>
+    </ul>
       </div>
     </div>
-    <i class="icon fa-regular fa-bell me-3"></i>
-    <i class="icon fa-solid fa-arrow-right-from-bracket "></i>
+    <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
+<i class="icon fa-regular fa-bell me-3 "></i>
 
 
-  </div>
-
+  
+ 
   <!-- END TOP NAV -->
+ 
 
-
-  <div class="content">
+  
+    
     <!-- Your content here -->
     <div class="container">
 
@@ -208,7 +211,29 @@
           </div>
         </div>
       </div>
+      <script>
+    // Close the dropdown when the page is initially loaded
+    document.getElementById("myDropdown").style.display = "none";
 
+    function toggleDropdown() {
+      var dropdown = document.getElementById("myDropdown");
+      if (dropdown.style.display === "block") {
+        dropdown.style.display = "none";
+      } else {
+        dropdown.style.display = "block";
+      }
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdown = document.getElementById("myDropdown");
+        if (dropdown.style.display === "block") {
+          dropdown.style.display = "none";
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>

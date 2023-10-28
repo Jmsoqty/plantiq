@@ -52,7 +52,7 @@ body {
 
 
 .content{
-  background-color: #eeeeee;
+  background-color: white;
   height:1500px;
 }
 
@@ -61,7 +61,38 @@ body {
  border-radius:20px;
 }
 
+/* Define the green status indicator */
+.status-green {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  border-radius: 50%;
+  margin-right: 10px;
+}
 
+/* Define the red status indicator */
+.status-red {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.icon.fa-arrow-right-from-bracket {
+  float: right;
+  margin-right: 10px; /* Adjust the margin value according to your preference */
+}
+.icon.fa-bell {
+  float: right;
+}
+#myInput {
+  width: 250px;
+  margin-left: 20px;
+  margin-top:  50px;
+  border-radius: 15px;
+}
 
 
 
