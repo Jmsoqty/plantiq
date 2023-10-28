@@ -52,6 +52,25 @@
   .dropdown a:hover {
     background-color: #f5f5f5;
   }
+  
+  .change-username {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.change-password {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+.change-password i {
+    margin: 0 15px; /* Add margin to icons for spacing */
+    margin-top: 10px;
+}
+.change-username i {
+    margin: 0 15px; /* Add margin to icons for spacing */
+    margin-top: 10px;
+}
   </style>
 <body>
 
@@ -98,32 +117,30 @@
     <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
 <i class="icon fa-regular fa-bell me-3 "></i>
 
-
+</div>
   <!-- </div> -->
 
   <!-- END TOP NAV -->
 
   
     <!-- Your content here -->
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
-    <h1>SETTINGS VIEW</h1>
+    <div class="container">
+      <h1> Settings</h1>
 
+</div>
+<div class="change-username ">
+        <i class="fas fa-pencil"></i>
+        <span>Change Username</span>
+        <i class="fa fa-arrow-right"></i>
+    </div>
+    <hr class="hr" />
+    <div class="change-password ">
+        <i class="fas fa-pencil"></i>
+        <span>Change Password</span>
+        <i class="fa fa-arrow-right"></i>
+    </div>
 
-  </div>
+ 
 
   <!-- BOTTOM NAVBAR -->
   <?php include 'css\navbar.php'; ?>
