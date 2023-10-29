@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<<<<<<< HEAD:pages/adddevice.php
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -15,26 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <!-- Main Template -->
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
-=======
-<html>
-
-<head>
-  <title>Add Device</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="css/img/icon.png" type="image/x-icon">
-
-
-  <!-- LINKS -->
-  <!-- http://fortawesome.github.io/Font-Awesome/get-started/ -->
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="../plantiq/css/includes/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
->>>>>>> 7f1739157f3dc0e19d38f74063305e812c47778b:adddevice.php
 </head>
+<body>
+  <!-- TOP NAVBAR -->
+<?php include '../pages/components/navbar-top.php'; ?>
+
+
 <style>
 
   
@@ -85,75 +73,7 @@
   }
 </style>
 
-<body>
-<<<<<<< HEAD:pages/adddevice.php
-  <!-- TOP NAVBAR -->
-<?php include './pages/component/navbar-top.php'; ?>
 
-
-
-<div class="dropdown d-flex float-right mt-2">
-    <button class="btn" type="button" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-sign-out fa-2x"></i>
-    </button>
-</div>
-
-<div class="dropdown float-right mt-2">
-    <button class="btn dropdown-toggle" type="button" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-bell fa-2x"></i>
-        <span  class="position-absolute translate-middle badge rounded-pill bg-danger "> 99+</span>
-    </button>
-</div>
-=======
->>>>>>> 7f1739157f3dc0e19d38f74063305e812c47778b:adddevice.php
-
-
-  <!-- NAVBAR START -->
-
-  <nav class="nav fixed-bottom">
-    <a href="home.php" class="nav__link">
-      <i class="fa fa-fw fa-home"></i>
-      <span class="nav__text">Home</span>
-    </a>
-    <a href="findplant.php" class="nav__link ">
-      <i class="fa fa-solid fa-book-bookmark"></i>
-      <span class="nav__text">Find Plants</span>
-    </a>
-    <a href="adddevice.php" class="nav__link nav__link--active">
-      <i class="fa fa-solid fa-plus"></i>
-      <span class="nav__text">Add Device</span>
-    </a>
-    <a href="profile.php" class="nav__link">
-      <i class="fa fa-regular fa-user"></i>
-      <span class="nav__text">Profile</span>
-    </a>
-    <a href="settings.php" class="nav__link">
-      <i class="fa fa-solid fa-gear"></i>
-      <span class="nav__text">Settings</span>
-    </a>
-  </nav>
-
-  <!-- NAVBAR END -->
-
-  <!-- TOP NAV -->
-
-  
-  <!-- <div class="dropdown ms-4">
-      <button onclick="toggleDropdown()" class="dropbtn">Device 1 <i class="fa-solid fa-caret-down ms-2"></i></button>
-    
-      <div id="myDropdown" class="dropdown-content">
-      <ul class="dropdown-menu">
-        <li><a href="#"><span class="status-green"></span> Device 1</a></li>
-        <li><a href="#"><span class="status-red"></span> Device 2</a></li>
-    </ul>
-      </div>
-    </div> -->
-    <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
-<i class="icon fa-regular fa-bell me-3 "></i>
-
-
-  <!-- </div> -->
-  <!-- END TOP NAV -->
 
   <!-- START CONTENT -->
   <div class="container">
@@ -180,7 +100,6 @@
 
   </div>
 
-<<<<<<< HEAD:pages/adddevice.php
 <script>
     document.getElementById('seeButton').addEventListener('click', function() {
         var passwordInput = document.getElementById('passwordInput');
@@ -188,31 +107,8 @@
             passwordInput.type = 'text';
         } else {
             passwordInput.type = 'password';
-=======
-
-  <script>
-    // Close the dropdown when the page is initially loaded
-    document.getElementById("myDropdown").style.display = "none";
-
-    function toggleDropdown() {
-      var dropdown = document.getElementById("myDropdown");
-      if (dropdown.style.display === "block") {
-        dropdown.style.display = "none";
-      } else {
-        dropdown.style.display = "block";
-      }
-    }
-
-    // Close the dropdown if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdown = document.getElementById("myDropdown");
-        if (dropdown.style.display === "block") {
-          dropdown.style.display = "none";
->>>>>>> 7f1739157f3dc0e19d38f74063305e812c47778b:adddevice.php
         }
-      }
-    }
+      });
   </script>
   <script>
     document.getElementById('seeButton').addEventListener('click', function() {
@@ -226,7 +122,7 @@
   </script>
 
 <!-- BOTTOM NAVBAR -->
-<?php include './pages/component/navbar-bottom.php'; ?>
+<?php include '../pages/components/navbar-bottom.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>

@@ -14,13 +14,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <!-- Main Template -->
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 <body>
   <!-- TOP NAVBAR -->
-<?php include './pages/component/navbar-top.php'; ?>
+<?php include '../pages/components/navbar-top.php'; ?>
+
+
 
   <div class="content">
     <!-- Your content here --> 
@@ -45,7 +47,7 @@
   </div>
 
   <!-- BOTTOM NAVBAR -->
-  <?php include './pages/component/navbar-bottom.php'; ?>
+  <?php include './pages/components/navbar-bottom.php'; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>

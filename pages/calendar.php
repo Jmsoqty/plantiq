@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home</title>
-  <link rel="shortcut icon" href="css/img/icon.png" type="image/x-icon">
+  <title>Plant.IQ | Home</title>
 
-
-  <!-- http://fortawesome.github.io/Font-Awesome/get-started/ -->
-  <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="../plantiq/css/includes/style.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="css/node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <script src="..plantiq/css/node_modules/bootstrap/js/src/dropdown.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Main Template -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
+<body>
+  <!-- TOP NAVBAR -->
+<?php include '../pages/components/navbar-top.php'; ?>
 <style>
   .dropdown {
     position: relative;
@@ -92,6 +97,13 @@
 .status-green {
     background-color: green;
 }
+.status-indicator.status-yellow {
+    background-color: yellow;
+}
+
+.status-indicator.status-blue {
+    background-color: blue;
+}
 
 /* Responsive Styling */
 @media (max-width: 768px) {
@@ -120,7 +132,9 @@
     }
 }
 /* Default styles */
-
+.status-container {
+    text-align: center;
+}
 .container {
     margin: 20px;
 }
@@ -178,9 +192,82 @@
 .light-text {
     color: #757575; /* Or any light color you prefer */
 }
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+  padding: 70px 25px;
+  width: 100%;
+  background: white;
+  text-align: center;
+}
+
+/* Month list */
+.month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: black;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* Previous button inside month header */
+.month .prev {
+  float: left;
+  padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+  float: right;
+  padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+  margin: 0;
+  padding: 10px 0;
+  background-color:#ddd;
+}
+
+.weekdays li {
+  display: inline-block;
+  width: 13.6%;
+  color: #666;
+  text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+  padding: 10px 0;
+  background: white;
+  margin: 0;
+}
+
+.days li {
+  list-style-type: none;
+  display: inline-block;
+  width: 13.6%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size:12px;
+  color: black;
+
+}
+
+/* Highlight the "current" day */
+.days li .active {
+  padding: 5px;
+  background: #1abc9c;
+  color: white !important
+}
 
 </style>
-
 <body>
 
   <!-- NAVBAR START -->
@@ -224,105 +311,75 @@
       </div>
       
     <span class="status-text">Status Connected:</span> <span class="status-indicator status-green"></span> 
-
-
-    </div>
+ </div>
     <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
 <i class="icon fa-regular fa-bell me-3 "></i>
-
+</div>
+<button type="button" class="btn btn-success btn-lg" style="margin-left: 70px; margin-top:20px;">Calendar</button>
+<button type="button" class="btn btn-default btn-lg" style="margin-left: 10px; margin-top:20px;">Logs</button>
+<button type="button" class="btn btn btn-lg" style="margin-left: 10px; margin-top:20px;">History</button>
+<div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>August<br><span style="font-size:18px">2023</span></li>
+  </ul>
 </div>
 
-   
+<ul class="weekdays">
+  <li>Su</li>
+  <li>Mo</li>
+  <li>Tu</li>
+  <li>We</li>
+  <li>Th</li>
+  <li>Fr</li>
+  <li>Sa</li>
+</ul>
 
+<ul class="days">
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+  <li>5</li>
+  <li>6</li>
+  <li>7</li>
+  <li>8</li>
+  <li>9</li>
+  <li><span class="active">10</span></li>
+  <li>11</li>
+  <li>12</li>
+  <li>13</li>
+  <li>14</li>
+  <li>15</li>
+  <li>16</li>
+  <li>17</li>
+  <li>18</li>
+  <li>19</li>
+  <li>20</li>
+  <li>21</li>
+  <li>22</li>
+  <li>23</li>
+  <li>24</li>
+  <li>25</li>
+  <li>26</li>
+  <li>27</li>
+  <li>28</li>
+  <li>29</li>
+  <li>30</li>
+  <li>31</li>
 
-
-  
  
-  <!-- END TOP NAV -->
- 
 
-  
-    
-    <!-- Your content here -->
-    <div class="container">
-
-      <!-- 1 column -->
-      <div class="container">
-        <div class="box center-text">
-          <div class="row d-flex justify-content-center">
-            <div class="col me-5">
-              <h5 class="d-flex justify-content-center">Planted For</h5>
-              <h1 class="d-flex justify-content-center">19 Days</h1>
-              <p class="d-flex justify-content-center light-text">Your plant has exceeded the transfer date by 2 days transfer now</p>
-
-            </div>
-            <div class="col d-flex justify-content-center">
-              <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="--value:65"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- 1 column -->
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="card"  style="border-radius: 25px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;;">
-              <div class="card-body">
-                <div style="display: flex; justify-content: space-between;" class="mb-4">
-                  <h5 class="card-title">Device 1</h5>
-                  <button onclick="window.location.href='calendar.php'">
-    <i class="fa-solid fa-ellipsis fa-lg"></i>
-</button>
-
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <p class="card-text">Date Planted:</p>
-                    <p class="card-text">October 3, 2023</p>
-                  </div>
-                  <div class="col">
-                    <p class="card-text">Date Of Transfer:</p>
-                    <p class="card-text">October 24, 2023</p>
-                  </div>
-                </div>
-
-                <div>
-                  <p class="card-text mt-4">Today's Schedule:</p>
-                  <p class="card-text mb-4">9:30 AM October 222</p>
-                </div>
-
-                <div class="d-flex justify-content-end">
-                  <div class="dropdown">
-                    <button>Plant Layout: 8</button>
-                    <div class="dropdown-menu">
-                      <a href="#">1</a>
-                      <a href="#">4</a>
-                      <a href="#">8</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div style="display: flex; flex-wrap: wrap; justify-content: center;">
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
-    <button type="button" class="btn btn-primary btn-lg" style="width: 150px; height: 150px; margin: 50px;">+</button>
+</ul>
+<div class="status-container">
+    <span class="status-indicator status-yellow"></span> <span class="status-text">Sunlight</span>
+    <span class="status-indicator status-blue"></span> <span class="status-text">Water</span>
+    <span class="status-indicator status-red"></span> <span class="status-text">Not Receive Any</span>
+    <span class="status-indicator status-green"></span> <span class="status-text">Ready to Harvest</span>
 </div>
 
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <script>
+<script>
     // Close the dropdown when the page is initially loaded
     document.getElementById("myDropdown").style.display = "none";
 
@@ -345,6 +402,11 @@
       }
     }
   </script>
+  <!-- BOTTOM NAVBAR -->
+<?php include '../pages/components/navbar-bottom.php'; ?>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
