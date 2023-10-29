@@ -233,7 +233,7 @@
 
 <body>
 
-  <div class="top fixed-top">
+  <!-- <div class="top fixed-top">
     <div class="dropdown ms-4">
       <button onclick="toggleDropdown()" class="dropbtn">Device 1 <i class="fa-solid fa-caret-down ms-2"></i></button>
 
@@ -246,10 +246,10 @@
     <i class="icon fa-solid fa-arrow-right-from-bracket "></i>
 
 
-  </div>
+  </div> -->
 
 
-  <script>
+  <!-- <script>
     // Close the dropdown when the page is initially loaded
     document.getElementById("myDropdown").style.display = "none";
 
@@ -271,7 +271,7 @@
         }
       }
     }
-  </script>
+  </script> -->
 </body>
 
 

@@ -67,7 +67,7 @@
 
   <!-- TOP NAV -->
 
-  <div class="top fixed-top">
+  <!-- <div class="top fixed-top">
     <div class="dropdown ms-4">
       <button onclick="toggleDropdown()" class="dropbtn">Device 1 <i class="fa-solid fa-caret-down ms-2"></i></button>
 
@@ -75,12 +75,13 @@
         <a href="#">Device 2</a>
         <a href="#">Add Device <i class="fa-solid fa-plus ms-1"></i></a>
       </div>
-    </div>
-    <i class="icon fa-regular fa-bell me-3"></i>
+    </div> -->
     <i class="icon fa-solid fa-arrow-right-from-bracket "></i>
 
+    <i class="icon fa-regular fa-bell me-3"></i>
+    
 
-  </div>
+  <!-- </div> -->
 
   <!-- END TOP NAV -->
 
