@@ -30,7 +30,22 @@
 
 
 
-  <h3 class="fw-bold mb-4 pr-2 ">Settings</h3>
+  <div class="container pt-3">
+  <div class="card border-0 rounded-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-9">
+          <h3 class="fw-bold mb-3">Settings</h3>
+          <h5 class="fw-bold mb-3"><i class="fas fa-pencil-alt"></i> Change Username</h5>
+          <h5 class="fw-bold mb-3"><i class="fas fa-pencil-alt"></i> Change Password</h5>
+        </div>
+        <div class="col-3 text-end arrow-col">
+          <span class="arrow">></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- BOTTOM NAVBAR -->
   <?php include '../pages/components/navbar-bottom.php'; ?>
