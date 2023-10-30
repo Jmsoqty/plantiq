@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'php/userconfig.php';
+include '../php/userconfig.php';
 
 // if (isset($_SESSION['status'])) {
 //     if($_SESSION['status'] == "Logged In"){
@@ -58,7 +58,7 @@ include 'php/userconfig.php';
             <label style="color: grey">Click here if you didn't receive a code:</label>  <a href="" style="color: green">Resend</a>
         </div><br><br><br>
         <div class="mx-auto text-center">
-            <label style="color: grey">You remember your account?</label>  <a href="login.php" style="color: green">Login</a>
+            <label style="color: grey">You remember your account?</label>  <a href="../index.php" style="color: green">Login</a>
         </div>
 </div>
 <!--

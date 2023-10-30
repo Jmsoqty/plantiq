@@ -51,7 +51,7 @@ if (isset($_GET['code'])) {
         $_SESSION['fullName'] = $userData['name'];
         $_SESSION['email'] = $userData['email'];
         $_SESSION['status'] = "Logged In";
-        header('Location: ../home.php');
+        header('Location: ../pages/home.php');
         exit();
       } else {
         // Email does not exist, insert the user into the database

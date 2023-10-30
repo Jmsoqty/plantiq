@@ -27,6 +27,8 @@ include 'php/userconfig.php';
   <!-- Main Template -->
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <script src="scripts/google-api.js"></script>
 
 </head>
 <body>
@@ -50,7 +52,7 @@ include 'php/userconfig.php';
                 <label>
                     <input type="checkbox" name ="remember" <?php if(isset($_COOKIE['fnbkn'])){echo "checked='checked'"; } ?> id="remember"> Remember me
                 </label>
-                <a href="forgotpass.php" class="forgot-password justify-content-end">Forgot password?</a>
+                <a href="pages/forgotpass.php" class="forgot-password justify-content-end">Forgot password?</a>
             </div>
         <!-- Sign In End -->
         <?php

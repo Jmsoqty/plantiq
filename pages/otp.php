@@ -66,7 +66,7 @@ if (isset($_SESSION['email'])) {
         }
     ?>
     <div class="text-center" style="margin-top: 100px;">
-        <label style="color: grey">You remember your account?</label>  <a href="login.php" style="color: green">Login</a>
+        <label style="color: grey">You remember your account?</label>  <a href="../index.php" style="color: green">Login</a>
     </div>
 </div>
 
