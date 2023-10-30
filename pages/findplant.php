@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant.IQ | Home</title>
 
+  <link rel="icon" href="../assets/img/icon.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,71 +17,17 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
 <body>
+
+  <!-- CoverPhoto -->
+  <?php include '../pages/components/cover.php'; ?>
+
   <!-- TOP NAVBAR -->
-<?php include '../pages/components/navbar-top.php'; ?>
+  <?php include '../pages/components/navbar.php'; ?>
 
-
-
-
-<div class="dropdown d-flex float-right mt-2">
-    <button class="btn" type="button" id="notificationDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <i class="fa fa-sign-out fa-2x"></i>
-    </button>
-</div>
-
-  <!-- NAVBAR START -->
-
-  <nav class="nav fixed-bottom">
-    <a href="home.php" class="nav__link">
-      <i class="fa fa-fw fa-home"></i>
-      <span class="nav__text">Home</span>
-    </a>
-    <a href="findplant.php" class="nav__link nav__link--active">
-      <i class="fa fa-solid fa-book-bookmark"></i>
-      <span class="nav__text">Find Plants</span>
-    </a>
-    <a href="adddevice.php" class="nav__link">
-      <i class="fa fa-solid fa-plus"></i>
-      <span class="nav__text">Add Device</span>
-    </a>
-    <a href="profile.php" class="nav__link">
-      <i class="fa fa-regular fa-user"></i>
-      <span class="nav__text">Profile</span>
-    </a>
-    <a href="settings.php" class="nav__link">
-      <i class="fa fa-solid fa-gear"></i>
-      <span class="nav__text">Settings</span>
-    </a>
-  </nav>
-
-  <!-- NAVBAR END -->
-
-   <!-- TOP NAV -->
-
-  
-   <!-- <div class="dropdown ms-4">
-      <button onclick="toggleDropdown()" class="dropbtn">Device 1 <i class="fa-solid fa-caret-down ms-2"></i></button>
-    
-      <div id="myDropdown" class="dropdown-content">
-      <ul class="dropdown-menu">
-        <li><a href="#"><span class="status-green"></span> Device 1</a></li>
-        <li><a href="#"><span class="status-red"></span> Device 2</a></li>
-    </ul>
-      </div>
-    </div> -->
-   
-<i class="icon fa-solid fa-arrow-right-from-bracket"></i>
-<i class="icon fa-regular fa-bell me-3 "></i>
-
-
- <button class="btn btn-default dropdown-toggle custom-button mt-2 mx-2 " type="button" data-toggle="dropdown">
-    <i class="fa fa-retweet"></i> Device 
-</button>
-<br>
 <div class="container">
 <label class="display-4 mx-5"><b>Suggestions:</b> </label>
 <div class="card mx-2 my-2 shadow-lg">

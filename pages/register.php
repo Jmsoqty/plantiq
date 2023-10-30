@@ -24,6 +24,8 @@ unset($_SESSION['email']);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant.IQ | Home</title>
 
+  <link rel="icon" href="../assets/img/icon.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,66 +36,90 @@ unset($_SESSION['email']);
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
 
 <body>
-<div class="container mt-4 d-flex justify-content-center align-items-center border shadow-lg border-2 rounded">
-  
-  <div class="container">
-    <div class="wrapper ">
-    <div>
-    <img class="img-fluid" src="../assets/img/title.png" alt="Your Image">
-    </div>
-        <div class="title mt-1"><h2>Register Account</h2></div>
-        <form action="" method="post">
-            <div class=" mb-2">
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username" required>
-            </div>
-            <div class=" mb-2">
-                <input type="text" class="form-control" name="email" id="email" placeholder="Username" required>
-            </div>
-            <div class=" mb-2">
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <div class=" mb-2">
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
-            </div>
-            <div class="mb-2">
-                <label>
-                    <input type="checkbox" id="showPassword" id="remember"> Show Password
-                </label>
-            </div>
-        <!-- Sign In End -->
-        
-             <div class="d-flex justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <button type="submit" class="btn btn-lg mt-1" style="background-color: #26DB23; color: #ffffff;" >Create Account</button>
-                </div>
-             </div>
-             <h5 class=" text-center mb-1">or</h5>
-             
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-lg mt-2" style="background-color: #E5E4E2; color: black;">
-                        <img src="../assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
-                    </button>
-                </div>
-             
-             <div class="d-flex justify-content-center mt-1 text-muted mt-3">
-                <a style="font-size:18px;">Already have a Account?</a>
-                <a href="../index.php" style="font-size:18px; color: #26DB23; margin-left: 10px;">Login</a>
-            </div>
-            </form>
-             </div>
 
-             
-        </div>
+  
+<form class="requires-validation" novalidate>
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="text-center" style="border-radius: 1rem;">
+
+    
+
+            <h3 class="fw-bold mb-4">Register your Account</h3>
+
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
+              <label for="validationServer01" class="form-label">Username</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Email" required>
+              <label for="validationServer02" class="form-label">Email</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" required>
+              <label for="floatingconpassword" class="form-label">Confirm Password</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+
+            
+            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-50 mt-2">Register Account</a>
+
+<h5 class="text-center my-3">or</h5>
+ 
+<div class="d-flex justify-content-center">
+  <button type="button" onclick="signIn()" class="btn btn-light btn-lg">
+    <img src="../assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
+  </button>
 </div>
-    </div>
+ 
+<div class="d-flex justify-content-around mt-3">
+  <a class="text-decoration-none text-dark">Already have an account?</a>
+  <a class="text-decoration-none text-primary" href="../index.php">Login</a>
+</div>
+
+<br><br>
+
+</div>  
 </div>
 </div>
 </div>
+</section>
+</form>
 <script>
   const fullNameInput = document.querySelector('input[name="fullname"]');
       fullNameInput.addEventListener('keypress', function(event) {

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include './userconfig.php';
+include './php/userconfig.php';
 
 // if (isset($_SESSION['status'])) {
 //     if($_SESSION['status'] == "Logged In"){
@@ -17,6 +17,8 @@ include './userconfig.php';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant.IQ | Home</title>
 
+  <link rel="icon" href="./assets/img/icon.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,15 +29,13 @@ include './userconfig.php';
   
   <!-- Main Template -->
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  
-  <script src="./scripts/google-api.js"></script>
+  <link rel="stylesheet" href="./assets/css/styles.css">
 
 </head>
 <body>
 
-<!-- CoverPhoto -->
-<?php include './pages/components/cover.php'; ?>
+
+  
 
 <form class="requires-validation" novalidate>
   <section class="vh-100">
@@ -80,7 +80,7 @@ include './userconfig.php';
             </div>
 
             <!-- <button type="submit" class="btn btn-lg" style="background-color: #26DB23; color: #ffffff;" >Log In</button> -->
-            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-75 mt-5">Login</a>
+            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-50 mt-5">Login</a>
 
             <h5 class="text-center my-3">or</h5>
              

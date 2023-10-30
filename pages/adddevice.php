@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant.IQ | Home</title>
 
+  <link rel="icon" href="../assets/img/icon.png">
+  
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,12 +17,16 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
 <body>
+
+  <!-- CoverPhoto -->
+  <?php include '../pages/components/cover.php'; ?>
+
   <!-- TOP NAVBAR -->
-<?php include '../pages/components/navbar-top.php'; ?>
+  <?php include '../pages/components/navbar.php'; ?>
 
 
 <style>
