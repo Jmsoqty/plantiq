@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'php/userconfig.php';
+include './userconfig.php';
 
 // if (isset($_SESSION['status'])) {
 //     if($_SESSION['status'] == "Logged In"){
@@ -8,7 +8,8 @@ include 'php/userconfig.php';
 //         exit();
 //     }
 // }
- ?>
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,81 +29,104 @@ include 'php/userconfig.php';
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css">
   
-  <script src="scripts/google-api.js"></script>
+  <script src="./scripts/google-api.js"></script>
 
 </head>
 <body>
-  
-<div class="container mt-4 d-flex justify-content-center align-items-center border shadow-lg border-2 rounded">
-  
-  <div class="container">
-    <div class="wrapper ">
-    <div>
-    <img class="img-fluid" src="./assets/img/title.png" alt="Your Image">
-    </div>
-        <h2 class=" text-center mb-3">Login to your Account</h2>
-        <form action="php/user_signin.php" method="post">
-            <div class="mb-3">
-                <input type="text" class="form-control" name="username" id="username" placeholder="Username" value = "<?php if(isset($_COOKIE['fnbkn'])) echo $_SESSION['fnbkn']; ?>" required>
-            </div>
-            <div class="mb-3">
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_COOKIE['qbtuyqug'])) echo $_SESSION['qbtuyqug']; ?>" required>
-            </div>
-            <div class="mb-3 d-flex justify-content-between">
-                <label>
-                    <input type="checkbox" name ="remember" <?php if(isset($_COOKIE['fnbkn'])){echo "checked='checked'"; } ?> id="remember"> Remember me
-                </label>
-                <a href="pages/forgotpass.php" class="forgot-password justify-content-end">Forgot password?</a>
-            </div>
-        <!-- Sign In End -->
-        <?php
-                // Display error messages if they were passed in the URL
-                if (isset($_GET['errors'])) {
-                    $errors = explode(',', $_GET['errors']);
-                    foreach ($errors as $error) {
-                        echo "<script>Swal.fire({
-                                icon: 'error',
-                                title: 'ERROR',
-                                text: '$error'
-                            });</script>";
 
-                }       
-                unset($_GET['errors']);
-                }
-            ?>
-             <div class="d-flex justify-content-center">
-             <!-- <button type="submit" class="btn btn-lg" style="background-color: #26DB23; color: #ffffff;" >Log In</button> -->
-              <a href="./pages/home.php" class="btn btn-primary btn-lg w-50">Login</a>
-             </div>
-             </form>      
-             <h5 class=" text-center mb-3">or</h5>
-             
-             <div class="d-flex justify-content-center">
-             <button type="button" onclick="signIn()" class="btn btn-lg" style="background-color: #E5E4E2; color: black;">
-               <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
-             </button>
-             </div>
-             
-              <div class="d-flex justify-content-center mt-3">
-                <a style="font-size:15px;">Don't have Account?</a>
-                <a href="pages/register.php" style="font-size:15px; color: #26DB23; margin-left: 10px;">Create Account</a>
-               </div>
-               <br><br>
-                
-             
+<!-- CoverPhoto -->
+<?php include './pages/components/cover.php'; ?>
 
+<form class="requires-validation" novalidate>
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="text-center" style="border-radius: 1rem;">
+
+            <img src="./assets/img/title.png" class="img-fluid px-1 w-50 mb-3">
+
+            <h5 class="fw-bold mb-3">Login to your Account</h5>
+
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
+              <label for="validationServer01" class="form-label">Username</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+
+            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+
+
+            <div class="my-3 d-flex justify-content-between">
+              <label>
+                <input type="checkbox" name ="remember" <?php if(isset($_COOKIE['fnbkn'])){echo "checked='checked'"; } ?> id="remember" checked> Remember me
+              </label>
+              <a href="pages/forgotpass.php" class="text-decoration-none text-secondary">Forgot password?</a>
+            </div>
+
+            <!-- <button type="submit" class="btn btn-lg" style="background-color: #26DB23; color: #ffffff;" >Log In</button> -->
+            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-75 mt-5">Login</a>
+
+            <h5 class="text-center my-3">or</h5>
              
+            <div class="d-flex justify-content-center">
+              <button type="button" onclick="signIn()" class="btn btn-light btn-lg">
+                <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
+              </button>
+            </div>
+             
+            <div class="d-flex justify-content-around mt-3">
+              <a class="text-decoration-none text-dark">Don't have Account?</a>
+              <a class="text-decoration-none text-primary" href="pages/register.php">Create Account</a>
+            </div>
+            
+            <br><br>
+        
+          </div>  
+        </div>
       </div>
-    </div>              
-  </div>
-</div>
+    </div>
+  </section>
+</form>
+
+<script src="./assets/js/bootstrap.bundle.js"></script>
+<script src="./assets/js/script.js"></script>
+
 <script>
-    if (window.performance) {
-      if (performance.navigation.type == 1) {
-        // Reloaded the page using the browser's reload button
-        window.location.href = "index.php";
+if (window.performance && performance.navigation.type === 1) {
+  window.location.href = "index.php";
+  }
+
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
       }
-    }
-    </script>
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
+
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!-- BOTTOM NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-light fixed-bottom" id="mobile-navbar">
     <div class="container-fluid">
-        <div class="d-flex justify-content-between w-100"> <!-- Added w-100 for full width -->
+        <div class="d-flex justify-content-around w-100"> <!-- Added w-100 for full width -->
           <div class="nav-item text-center">
                 <a class="nav-link text-dark text-decoration-none" href="./home.php">
                     <i class="fa-solid fa-house" style="color: #26DB23;"></i>
