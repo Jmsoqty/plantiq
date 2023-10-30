@@ -1,79 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Home</title>
+  <title>Plant.IQ | Add Device</title>
+  <link rel="icon" href="../assets/img/icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
+
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
+
 <body>
+
+  <!-- CoverPhoto -->
+
   <!-- TOP NAVBAR -->
-<?php include '../pages/components/navbar-top.php'; ?>
-
-
-<style>
-
-  
-
-
-  @media (max-width: 768px) {
-    .container {
-      margin-top: 100px;
-    }
-  }
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-
-
-  .dropdown button {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-
-  .dropdown .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-
-  .dropdown a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-  }
-
-  .dropdown a:hover {
-    background-color: #f5f5f5;
-  }
-</style>
-
-
+  <?php include '../pages/components/navbar-top.php'; ?>
 
   <!-- START CONTENT -->
   <div class="container">
@@ -92,41 +46,39 @@
         </div>
         <div class="d-flex justify-content-center">
           <a href="adevice1.php">
-            <button class="btn btn-success btn-lg mt-3">Connect</button>
+            <button class="btn btn-success btn-lg mt-3" style="background-color: #26DB23;">Connect</button>
           </a>
         </div>
       </div>
     </div>
 
   </div>
+  <!-- BOTTOM NAVBAR -->
+  <?php include '../pages/components/navbar-bottom.php'; ?>
 
-<script>
-    document.getElementById('seeButton').addEventListener('click', function() {
-        var passwordInput = document.getElementById('passwordInput');
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-        }
-      });
-  </script>
+  <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/all.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
   <script>
-    document.getElementById('seeButton').addEventListener('click', function() {
-      var passwordInput = document.getElementById('passwordInput');
-      if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-      } else {
-        passwordInput.type = 'password';
-      }
+    $(document).ready(function() {
+
+      //hides dropdown content
+      $(".size_chart").hide();
+
+      //unhides first option content
+      $("#option1").show();
+
+      //listen to dropdown for change
+      $("#size_select").change(function() {
+        //rehide content on change
+        $('.size_chart').hide();
+        //unhides current item
+        $('#' + $(this).val()).show();
+      });
+
     });
   </script>
 
-<!-- BOTTOM NAVBAR -->
-<?php include '../pages/components/navbar-bottom.php'; ?>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-
 </body>
-
 </html>
