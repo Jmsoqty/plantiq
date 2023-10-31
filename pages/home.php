@@ -58,7 +58,7 @@
         <div class="card-body">
           <div class="d-flex justify-content-between mb-4">
             <h5 class="card-title fw-bolder">Device 1</h5>
-            <a href="#" class="">
+            <a href="../pages/calendar.php" class="">
               <i class="fa-solid fa-ellipsis fa-2xl text-dark"></i>
             </a>
           </div>

@@ -32,8 +32,44 @@
 <!-- HOME NAVBAR -->
 <?php include '../pages/components/navbar-home.php'; ?>
   
+<div class="card-body" style='overflow-x:auto; margin-top:30px'>
+        <table id="tbl" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+            <h5 class="ms-2">October 24, 2023</h5>
+            <tr>
+              <th width="20%">Device Name</th>
+              <th width="20%">Plant Status</th>
+              <th width="17%">PH Level</th>
+              <th width="20%">Water Level</th>
+              <th width="20%">Soil Moisture</th>
+              <th width="15%">Time</th>
+              
+            </tr>
+           
+            
+          </thead>
 
+          <tbody>
 
+          <table id="tbl" class="table table-striped table-bordered" style="width:100%">
+          <thead>
+            <h5 class="ms-2 mt-5">October 25, 2023</h5>
+            <tr>
+              <th width="20%">Device Name</th>
+              <th width="20%">Plant Status</th>
+              <th width="17%">PH Level</th>
+              <th width="20%">Water Level</th>
+              <th width="20%">Soil Moisture</th>
+              <th width="15%">Time</th>
+              
+            </tr>
+           
+            
+          </thead>
+
+          <tbody>
+
+          
 
 
   <!-- BOTTOM NAVBAR -->

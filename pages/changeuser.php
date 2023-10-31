@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="css/img/icon.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="fontawesome/all.min.css">
-    <link rel="stylesheet" href="fontawesome/fontawesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="home.css">
-    <title>Change Username</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant.IQ | Home</title>
+
+  <link rel="icon" href="../assets/img/icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  
+  <!-- Main Template -->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+
 </head>
 <body>
 
+  <!-- CoverPhoto -->
+  <?php include '../pages/components/cover.php'; ?>
+
+  <!-- TOP NAVBAR -->
+  <?php include '../pages/components/navbar.php'; ?>
+
+
 <div class="container">
+<a href="../pages/settings.php" class="text-black">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
     <div style="margin-top: 100px;">
-        <h1 class="justify-content-center d-flex">Change Username</h1>
-       <center> <span style="color: gray;">Input your new desire Username</span> </center>
+        <h1 class="justify-content-center d-flex mb-3">Change Username</h1>
+       <center> <span style="color: gray; ">Input your new desire Username</span> </center>
     </div>
-    <form action="">
-    <div class=" mb-4 mt-5">
-        <input type="text" class="form-control form-control-lg" placeholder="Annabelle Roxas" style="border-radius: 10px;">
-    </div>
-    <div class=" mb-4">
-        <input type="text" class="form-control form-control-lg"  placeholder="Password" style="border-radius: 10px;">
-    </div>
-    <div class=" mb-4">
-        <input type="password" class="form-control form-control-lg" placeholder="Confirm Password" style="border-radius: 10px;">
-    </div>
-    <div class="justify-content-center d-flex mt-5">
-        <button class="btn btn-lg btn-success fw-bold" type="button" style="padding: 10px 20px; font-size: 15px;">Change Username</button>
-    </div>    
-</form>
-</div>
-<!--
-<div class="container mt-5">
-    <div class="card mx-auto shadow" style="width: 30rem;">
-    <h1 class="mx-auto mt-3">Change Username</h1>
-    <label class="mx-auto" style="color: grey;">input your desire password</label>
-    <div class="card-body">
-            <form action="tms_login_backend.php" method="post">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floating" placeholder="name@example.com">
-                    <label for="floatingPass">Annabelle Roxas</label>
-                    </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword"> Password</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingConfPassword" placeholder="Password">
-                    <label for="floatingConfPassword">Confirm Password</label>
-                </div>
-            </form>
-            <div class="justify-content-center d-flex mx-auto">
-                <a href="#  ">
-                    <button class="btn btn-success btn-lg mt-3">Confirm</button>
-                </a>
+    <div class="form-floating mt-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
+              <label for="validationServer01" class="form-label">Username</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
             </div>
-        </div>
-    </div>
+            
+            <div class="form-floating mt-3 text-start border border-dark rounded-4">
+              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+              <label for="floatingPassword">Password</label>
+              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+            <div class="form-floating mt-3 text-start border border-dark rounded-4">
+              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" required>
+              <label for="floatingconpassword" class="form-label">Confirm Password</label>
+              <div class="valid-feedback">
+                Looks good!
+              </div>
+              <div class="invalid-feedback">
+                Not look good!
+              </div>
+            </div>
+            <center> <a href="./pages/home.php" class=" btn btn-primary btn-lg rounded-pill w-50 mt-5 ">Change Username</a> </center>
 </div>
--->    
+
     <script src="js/bootstrap.bundle.min.css"></script>
 </body>
 </html>

@@ -32,8 +32,26 @@
 <!-- HOME NAVBAR -->
 <?php include '../pages/components/navbar-home.php'; ?>
   
-
-
+<div class="top" style="padding-top: 50px;">
+    <div class="d-flex flex-row">
+      <div class="dropdown flex-grow-1">
+        <button class="btn btn-outline-dark dropdown-toggle  ms-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          October 14, 2023 - November 4, 2023 
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">October 14, 2023 - November 4, 2023 </a></li>
+          <li><a class="dropdown-item" href="#">October 14, 2023 - November 4, 2023 </a></li>
+          <li><a class="dropdown-item" href="#">October 14, 2023 - November 4, 2023 </a></li>
+        </ul>
+</div>
+</div>
+<table id="tbl" class="table table-striped table-bordered mt-4" style="width:100%">
+  <thead>
+    <tr>
+      <th width="20%" style="text-align: center;">List of plants name</th>
+    </tr>
+  </thead>
+  <tbody>
 
 
   <!-- BOTTOM NAVBAR -->

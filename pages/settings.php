@@ -30,14 +30,18 @@
 
 
 
-  <div class="container pt-3">
-  <div class="card border-0 rounded-4">
-    <div class="card-body">
+  <div class="container pt-3 mt-5">
       <div class="row">
         <div class="col-9">
-          <h3 class="fw-bold mb-3">Settings</h3>
-          <h5 class="fw-bold mb-3"><i class="fas fa-pencil-alt"></i> Change Username</h5>
-          <h5 class="fw-bold mb-3"><i class="fas fa-pencil-alt"></i> Change Password</h5>
+          <h3 class="fw-bold mt-3">Settings</h3>
+          <h5 class="text-secondary fw-bold mt-4">
+    <a href="../pages/changeuser.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Username</a>
+</h5>
+<h5 class="text-secondary fw-bold mt-4">
+    <a href="../pages/changepass.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Password</a>
+</h5>
+
+        
         </div>
         <div class="col-3 text-end arrow-col">
           <span class="arrow">></span>

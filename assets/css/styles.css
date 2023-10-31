@@ -172,4 +172,9 @@ div[role="progressbar"]::before {
   align-items: center;
   justify-content: flex-end;
 }
-
+.clickable-row {
+  cursor: pointer;
+}
+.center-text {
+  text-align: center;
+}
