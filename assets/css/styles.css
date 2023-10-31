@@ -31,6 +31,22 @@ body{
   padding-right: 30px; /* Adjust as needed */
 }
 
+.boxy {
+  display: flex;
+  background: white;
+  padding: 10px;
+  color: #333;
+  height: 180px;
+  border-radius: 25px;
+  margin: auto;
+}
+
+.boxy img {
+  width: auto;
+  height: 100%;
+  border-radius: 25px;
+}
+
 /* COVER PHOTO */
 
 /* Media query for screens with a maximum width of 576px (Mobile) */
