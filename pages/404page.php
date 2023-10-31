@@ -24,14 +24,17 @@
 
 <body>
 
-    <!-- START CONTENT -->
-    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div>
+   <!-- START CONTENT -->
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="text-center">
         <img src="../assets/img/404.png" class="img-fluid" style="width: 450px; height: 230px;">
-        <h1 class="text-center">401 UNAUTHORIZED</h1>
-        <h6 class="text-center">The User cannot access without a username and password</h6>
+        <h1>401 UNAUTHORIZED</h1>
+        <h6>The User cannot access without a username and password</h6>
+        <a href="home.php" class="btn btn-primary rounded-pill mt-5 w-50 fw-semibold">Back to Home</a>
     </div>
 </div>
+
+
 
 
 </body>
