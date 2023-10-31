@@ -48,27 +48,7 @@
               </div>
             </div>
             
-            <div class="form-floating mt-3 text-start border border-dark rounded-4">
-              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Password</label>
-              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            <div class="form-floating mt-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" required>
-              <label for="floatingconpassword" class="form-label">Confirm Password</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
+            
             <center> <a href="./pages/home.php" class=" btn btn-primary btn-lg rounded-pill w-50 mt-5 ">Change Username</a> </center>
 </div>
 
