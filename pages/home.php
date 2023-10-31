@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
-
 <body>
 
   <!-- CoverPhoto -->
@@ -298,10 +297,6 @@
           </div>
         </div>
       </div>
-
-
-
-
       <br><br>
 
     </div>
@@ -334,6 +329,24 @@
 
     });
   </script>
+  <script>
+    // Function to edit the content of the boxy
+    function editElement() {
+      // Allow editing by removing the "contenteditable" attribute
+      document.querySelectorAll('[contenteditable="true"]').forEach(function(el) {
+        el.removeAttribute("contenteditable");
+      });
+    }
+
+    // Function to delete the boxy
+    function deleteElement() {
+      // Remove the entire .boxy element
+      const boxy = document.querySelector(".boxy");
+      if (boxy) {
+        boxy.remove();
+      }
+    }
+  </script>
 
 </body>
 
@@ -344,10 +357,91 @@
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">MANAGE PLANTS</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+        <!-- FIRST LAYER -->
+        <div class="boxy">
+          <div class="me-2">
+            <img class="img" src="../assets/img/pechay.png" class="img-responsive" contenteditable="true">
+          </div>
+
+          <div class="text">
+            <h3 class="headline" contenteditable="true">Pechay Plant</h3>
+            <div class="dropdown">
+              <!-- Size dropdown menu -->
+              <select id="size_select" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" style="border: 2px solid;" contenteditable="true">
+                <option value="option1" contenteditable="true">Alive</option>
+                <option value="option2" contenteditable="true">Dead</option>
+              </select>
+            </div>
+
+            <!-- Edit and Delete Buttons with Bootstrap Styling -->
+            <div class="mt-4">
+              <button class="btn btn-primary" onclick="editElement()">Edit</button>
+              <button class="btn btn-danger" onclick="deleteElement()">Remove</button>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Search Layer  -->
+          <div class="p-1 rounded rounded-pill shadow-sm mb-4" style="border: 2px solid;">
+            <div class="input-group">
+              <input type="search" placeholder="Search for Plant" aria-describedby="button-addon1" class="form-control  rounded-pill">
+              <div class="input-group-append">
+                <button id="button-addon1" type="submit" class="btn"><i class="fa fa-search"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4>Recommended Plants</h4>
+        </div>
+
+        <!-- Recoomended 1st Layer -->
+        <div class="boxy mt-3" style="border: 2px solid;">
+          <div class="me-2">
+            <img class="img" src="../assets/img/sili.png" class="img-responsive">
+          </div>
+
+            <div class="text">
+            <h6 class="headline">Red Chili Peppers</h6>
+            <h6 class="sub">7-10 Days</h6>
+
+            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
+          </div>
+        </div>
+
+        <!-- Recoomended 2nd Layer -->
+        <div class="boxy mt-3" style="border: 2px solid;">
+          <div class="me-2">
+            <img class="img" src="../assets/img/pechay.png" class="img-responsive">
+          </div>
+
+          <div class="text">
+            <h6 class="headline">Red Chili Peppers</h6>
+            <h6 class="sub">7-10 Days</h6>
+
+            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
+          </div>
+        </div>
+
+        <!-- Recoomended 3rd Layer -->
+        <div class="boxy mt-3" style="border: 2px solid;">
+          <div class="me-2">
+            <img class="img" src="../assets/img/onion.png" class="img-responsive">
+          </div>
+
+          <div class="text">
+            <h6 class="headline">Red Chili Peppers</h6>
+            <h6 class="sub">7-10 Days</h6>
+
+            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
+          </div>
+        </div>
         ...
       </div>
       <div class="modal-footer">
