@@ -1,15 +1,19 @@
-<div class="top" style="padding-top: 50px;">
-    <div class="d-flex flex-row">
-        <div class="flex-grow-1">
-            <a href="../pages/calendar.php" class="btn btn-outline-dark mt-2 ms-5" role="button">
-                Calendar
-            </a>
-            <a href="../pages/logs.php" class="btn btn-outline-dark mt-2 ms-3" role="button">
-                Logs
-            </a>
-            <a href="../pages/history.php" class="btn btn-outline-dark mt-2 ms-3" role="button">
-                History
-            </a>
-        </div>
-    </div>
+<div class="container" style="padding-top: 50px;">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a href="../pages/calendar.php" class="nav-link btn btn-primary" aria-current="page">
+        Calendar
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="../pages/logs.php" class="nav-link btn" aria-current="page">
+      Logs
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="../pages/history.php" class="nav-link btn" aria-current="page">
+      History
+      </a>
+    </li>
+  </ul>
 </div>

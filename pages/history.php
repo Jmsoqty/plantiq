@@ -29,8 +29,27 @@
 
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-top.php'; ?>
-<!-- HOME NAVBAR -->
-<?php include '../pages/components/navbar-home.php'; ?>
+    
+  <!-- HOME NAVBAR -->
+  <div class="container" style="padding-top: 50px;">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="../pages/calendar.php" class="nav-link" aria-current="page">
+          Calendar
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/logs.php" class="nav-link" aria-current="page">
+        Logs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/history.php" class="nav-link active bg-primary" aria-current="page">
+        History
+        </a>
+      </li>
+    </ul>
+  </div>
   
 <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">

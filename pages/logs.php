@@ -11,7 +11,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -29,9 +28,28 @@
 
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-top.php'; ?>
-<!-- HOME NAVBAR -->
-<?php include '../pages/components/navbar-home.php'; ?>
-  
+
+  <!-- HOME NAVBAR -->
+  <div class="container" style="padding-top: 50px;">
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a href="../pages/calendar.php" class="nav-link" aria-current="page">
+          Calendar
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/logs.php" class="nav-link active bg-primary" aria-current="page">
+        Logs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="../pages/history.php" class="nav-link" aria-current="page">
+        History
+        </a>
+      </li>
+    </ul>
+  </div>
+
 <div class="card-body" style='overflow-x:auto; margin-top:30px'>
         <table id="tbl" class="table table-striped table-bordered" style="width:100%">
           <thead>
