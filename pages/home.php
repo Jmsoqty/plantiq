@@ -307,8 +307,9 @@
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
   <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/navbarmenu.js"></script>
   <script src="../assets/js/all.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
   <script>
     $(document).ready(function() {

@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <!-- Main Template -->
-  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 
     <style>
@@ -30,6 +30,7 @@
     table, tbody, td, tfoot, th, thead, tr {
       border-color: #ededed !important;
       border-style: solid;
+      background: #fff;
       border-width: 1px !important;
     }
     </style>
@@ -45,25 +46,7 @@
   <?php include '../pages/components/navbar-top.php'; ?>
 
   <!-- HOME NAVBAR -->
-  <div class="container" style="padding-top: 50px;">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a href="../pages/calendar.php" class="nav-link active bg-primary" aria-current="page">
-          Calendar
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/logs.php" class="nav-link btn" aria-current="page">
-        Logs
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/history.php" class="nav-link btn" aria-current="page">
-        History
-        </a>
-      </li>
-    </ul>
-  </div>
+  <?php include '../pages/components/navbar-home.php'; ?>
 
   <div class="container py-5" id="page-container">
     <div class="row">
@@ -114,45 +97,45 @@
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
   <!-- Add Event Modal -->
-<div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="schedule-form">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content rounded-0">
-      <div class="modal-header rounded-0">
-        <h5 class="modal-title">Add Event</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body rounded-0">
-        <div class="container-fluid">
-          <form id="event-form">
-            <div class="mb-3">
-              <label for="event-title" class="form-label">Title</label>
-              <input type="text" class="form-control" id="event-title" name="title">
-            </div>
-            <div class="mb-3">
-              <label for="event-description" class="form-label">Description</label>
-              <textarea class="form-control" id="event-description" name="description"></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="event-start" class="form-label">Start Date and Time</label>
-              <input type="datetime-local" class="form-control" id="event-start" name="start_datetime">
-            </div>
-            <div class="mb-3">
-              <label for="event-end" class="form-label">End Date and Time</label>
-              <input type="datetime-local" class="form-control" id="event-end" name="end_datetime">
-            </div>
-          </form>
+  <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="schedule-form">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-0">
+        <div class="modal-header rounded-0">
+          <h5 class="modal-title">Add Event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <div class="modal-footer rounded-0">
-        <div class="text-end">
-          <button type="button" class="btn btn-primary btn-sm rounded-0" id="save-event">Save</button>
-          <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+        <div class="modal-body rounded-0">
+          <div class="container-fluid">
+            <form id="event-form">
+              <div class="mb-3">
+                <label for="event-title" class="form-label">Title</label>
+                <input type="text" class="form-control" id="event-title" name="title">
+              </div>
+              <div class="mb-3">
+                <label for="event-description" class="form-label">Description</label>
+                <textarea class="form-control" id="event-description" name="description"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="event-start" class="form-label">Start Date and Time</label>
+                <input type="datetime-local" class="form-control" id="event-start" name="start_datetime">
+              </div>
+              <div class="mb-3">
+                <label for="event-end" class="form-label">End Date and Time</label>
+                <input type="datetime-local" class="form-control" id="event-end" name="end_datetime">
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer rounded-0">
+          <div class="text-end">
+            <button type="button" class="btn btn-primary btn-sm rounded-0" id="save-event">Save</button>
+            <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Add Event Modal -->
+  <!-- Add Event Modal -->
 
 
   <!-- Event Details Modal -->
@@ -190,10 +173,10 @@
   <!-- Event Details Modal -->
 
   <script>
-       // Add a new modal for entering schedule details (if not already added)
+  // Add a new modal for entering schedule details (if not already added)
 
-// Date click event
-calendar.on('dateClick', function(info) {
+  // Date click event
+  calendar.on('dateClick', function(info) {
     // Open the add event modal
     addEventModal.modal('show');
 
@@ -205,10 +188,10 @@ calendar.on('dateClick', function(info) {
     addEventModal.on('hidden.bs.modal', function () {
         $('#event-form')[0].reset();
     });
-});
+  });
 
+  </script>
 
-    </script>
 <?php 
 $schedules = $conn->query("SELECT * FROM `schedule_list`");
 $sched_res = [];
@@ -230,6 +213,7 @@ if(isset($conn)) $conn->close();
 
   <script src="../assets/js/bootstrap.bundle.js"></script>
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/navbarmenu.js"></script>
   <script src="../assets/js/main.js"></script>
   <script src="../assets/js/calendar.js"></script>
 

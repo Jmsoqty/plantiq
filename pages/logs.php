@@ -30,25 +30,8 @@
   <?php include '../pages/components/navbar-top.php'; ?>
 
   <!-- HOME NAVBAR -->
-  <div class="container" style="padding-top: 50px;">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a href="../pages/calendar.php" class="nav-link" aria-current="page">
-          Calendar
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/logs.php" class="nav-link active bg-primary" aria-current="page">
-        Logs
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/history.php" class="nav-link" aria-current="page">
-        History
-        </a>
-      </li>
-    </ul>
-  </div>
+  <?php include '../pages/components/navbar-home.php'; ?>
+
 
 <div class="card-body" style='overflow-x:auto; margin-top:30px'>
         <table id="tbl" class="table table-striped table-bordered" style="width:100%">
@@ -93,8 +76,9 @@
   <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
-</body>
+  <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/navbarmenu.js"></script>
 
+</body>
 </html>

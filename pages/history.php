@@ -31,27 +31,10 @@
   <?php include '../pages/components/navbar-top.php'; ?>
     
   <!-- HOME NAVBAR -->
-  <div class="container" style="padding-top: 50px;">
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a href="../pages/calendar.php" class="nav-link" aria-current="page">
-          Calendar
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/logs.php" class="nav-link" aria-current="page">
-        Logs
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="../pages/history.php" class="nav-link active bg-primary" aria-current="page">
-        History
-        </a>
-      </li>
-    </ul>
-  </div>
+  <?php include '../pages/components/navbar-home.php'; ?>
+
   
-<div class="top" style="padding-top: 50px;">
+  <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
       <div class="dropdown flex-grow-1">
         <button class="btn btn-outline-dark dropdown-toggle  ms-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,22 +45,27 @@
           <li><a class="dropdown-item" href="#">October 14, 2023 - November 4, 2023 </a></li>
           <li><a class="dropdown-item" href="#">October 14, 2023 - November 4, 2023 </a></li>
         </ul>
-</div>
-</div>
-<table id="tbl" class="table table-striped table-bordered mt-4" style="width:100%">
-  <thead>
-    <tr>
-      <th width="20%" style="text-align: center;">List of plants name</th>
-    </tr>
-  </thead>
-  <tbody>
+      </div>
+    </div>
+
+    <table id="tbl" class="table table-striped table-bordered mt-4" style="width:100%">
+      <thead>
+        <tr>
+          <th width="20%" style="text-align: center;">List of plants name</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
 
 
   <!-- BOTTOM NAVBAR -->
-<?php include '../pages/components/navbar-bottom.php'; ?>
+  <?php include '../pages/components/navbar-bottom.php'; ?>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/jquery-3.7.1.min.js"></script>
+  <script src="../assets/js/navbarmenu.js"></script>
+
 </body>
-
 </html>
