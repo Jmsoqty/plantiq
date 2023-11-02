@@ -49,48 +49,49 @@
   <?php include '../pages/components/navbar-home.php'; ?>
 
   <div class="container py-5" id="page-container">
+  <div class="mb-2" id="addBtn">
+  <button class="btn btn-primary ms-4" id="add-notes-button">Add notes</button>
+</div>
     <div class="row">
       <div class="col-md-9">
         <div id="calendar"></div>
       </div>
-      <div class="col-md-3">
-        <div class="card rounded-0 shadow">
-          <div class="card-header bg-gradient bg-primary text-light">
-            <h5 class="card-title">Schedule Form</h5>
+      <div class="modal" id="schedule-form-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-md" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-gradient bg-primary text-light">
+        <h5 class="modal-title">Schedule Form</h5>
+      </div>
+      <div class="modal-body">
+        <form action="../php/save_schedule.php" method="post" id="schedule-form">
+          <input type="hidden" name="id" value="">
+          <div class="form-group mb-2">
+            <label for="title" class="control-label">Title</label>
+            <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
           </div>
-          <div class="card-body">
-            <div class="container-fluid">
-              <form action="../php/save_schedule.php" method="post" id="schedule-form">
-                <input type="hidden" name="id" value="">
-                <div class="form-group mb-2">
-                  <label for="title" class="control-label">Title</label>
-                  <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
-                </div>
-                <div class="form-group mb-2">
-                  <label for="description" class="control-label">Description</label>
-                  <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
-                </div>
-                <div class="form-group mb-2">
-                  <label for="start_datetime" class="control-label">Start</label>
-                  <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
-                </div>
-                <div class="form-group mb-2">
-                  <label for="end_datetime" class="control-label">End</label>
-                  <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
-                </div>
-              </form>
-            </div>
+          <div class="form-group mb-2">
+            <label for="description" class="control-label">Description</label>
+            <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
           </div>
-          <div class="card-footer">
-            <div class="text-center">
-              <button class="btn btn-primary btn-sm rounded-0" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save</button>
-              <button class="btn btn-default border btn-sm rounded-0" type="reset" form="schedule-form"><i class="fa fa-reset"></i> Cancel</button>
-            </div>
+          <div class="form-group mb-2">
+            <label for="start_datetime" class="control-label">Start</label>
+            <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
           </div>
-        </div>
+          <div class="form-group mb-2">
+            <label for="end_datetime" class="control-label">End</label>
+            <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary btn-sm rounded-0" type="submit"><i class="fa fa-save"></i> Save</button>
+            <butto  class ="close btn btn-default border btn-sm rounded-0" type="button" data-dismiss="modal"><i class="fa fa-reset"></i> Cancel</button>
+
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>
+
 
 
   <!-- BOTTOM NAVBAR -->
@@ -129,7 +130,8 @@
         <div class="modal-footer rounded-0">
           <div class="text-end">
             <button type="button" class="btn btn-primary btn-sm rounded-0" id="save-event">Save</button>
-            <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
+            <button id="cancel-button" class="btn btn-default border btn-sm rounded-0" type="button"><i class="fa fa-reset"></i> Close</button>
+
           </div>
         </div>
       </div>
@@ -170,8 +172,41 @@
       </div>
     </div>
   </div>
-  <!-- Event Details Modal -->
 
+  <!-- Event Details Modal -->
+  <script>
+ // Function to open the modal
+function openModal() {
+  var modal = document.getElementById("schedule-form-modal");
+  modal.style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  var modal = document.getElementById("schedule-form-modal");
+  modal.style.display = "none";
+}
+
+// Close the modal if the user clicks outside of it
+window.onclick = function(event) {
+  var modal = document.getElementById("schedule-form-modal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+// Close the modal when the close button is clicked
+var closeButton = document.querySelector("#schedule-form-modal .close");
+if (closeButton) {
+  closeButton.addEventListener("click", closeModal);
+}
+
+// Open the modal when the "Add Notes" button is clicked
+var addNotesButton = document.getElementById("add-notes-button");
+if (addNotesButton) {
+  addNotesButton.addEventListener("click", openModal);
+}
+</script>
   <script>
   // Add a new modal for entering schedule details (if not already added)
 
