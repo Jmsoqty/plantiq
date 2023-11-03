@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
@@ -35,46 +34,26 @@
         </ul>
       </div>
       <div class="dropdown">
-    <a href="#" class="btn mt-2" id="logoutBtn">
+      <button type="button" class="btn mt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
         <i class="fa-solid fa-arrow-right-from-bracket fa-2xl navbtn"></i>
-    </a>
-</div>
-
-<!-- Logout Modal -->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            
-            <div class="modal-body">
-                Are you sure you want to logout?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelBtn">Cancel</button>
-                <a href="../index.php" class="btn btn-primary">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+      </button>
     </div>
   </div>
 </div>
-<script>
-    // JavaScript to show the modal when the button is clicked
-    document.getElementById('logoutBtn').addEventListener('click', function() {
-        $('#logoutModal').modal('show');
-    });
 
-    // Optional: JavaScript to handle logout confirmation
-    document.getElementById('confirmLogout').addEventListener('click', function() {
-        // Perform logout action here
-    });
-    
-</script> 
-<script>
-  // JavaScript to close the modal without redirecting when the "Cancel" button is clicked
-  document.getElementById('cancelBtn').addEventListener('click', function() {
-        $('#logoutModal').modal('hide');
-    });
-  </script>
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content p-5 rounded-5">
+      <div class="text-center fw-bold">
+      <i class="fa-solid fa-circle-exclamation mb-3" style="color: #ff0000; font-size: 100px;"></i>
+        <br>
+        Are you sure you want to logout?
+      </div>
+      <div class="d-flex justify-content-around mt-3">
+        <button type="button" class="btn btn-danger rounded-pill" data-bs-dismiss="modal">Close</button>
+        <a href="../index.php" class="btn btn-primary rounded-pill">Logout</a>
+      </div>
+    </div>
+  </div>
+</div>
