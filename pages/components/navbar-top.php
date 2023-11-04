@@ -6,9 +6,9 @@
           Switch Device
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Device 1</a></li>
-          <li><a class="dropdown-item" href="#">Device 2</a></li>
-          <li><a class="dropdown-item" href="#">Device 3</a></li>
+          <li><a class="dropdown-item active-status" href="#"><span class="circle"></span>Device 1</a></li>
+          <li><a class="dropdown-item active-status" href="#"><span class="circles"></span>Device 2</a></li>
+          <li><a class="dropdown-item active-status" href="#"><span class="circles"></span>Device 3</a></li>
         </ul>
       </div>
 

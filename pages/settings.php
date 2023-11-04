@@ -43,9 +43,7 @@
 
         
         </div>
-        <div class="col-3 text-end arrow-col">
-          <span class="arrow">></span>
-        </div>
+       
       </div>
     </div>
   </div>
