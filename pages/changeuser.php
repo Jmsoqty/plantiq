@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Home</title>
+  <title>Plant.IQ | Change Username </title>
 
   <link rel="icon" href="../assets/img/icon.png">
   
@@ -26,32 +26,54 @@
   <?php include '../pages/components/cover.php'; ?>
 
   <!-- TOP NAVBAR -->
-  <?php include '../pages/components/navbar.php'; ?>
+  <?php include '../pages/components/navbar-back.php'; ?>
 
 
 <div class="container">
-<a href="../pages/settings.php" class="text-black">
-<i class="fa-solid fa-arrow-left"></i>
-</a>
-    <div style="margin-top: 100px;">
-        <h1 class="justify-content-center d-flex mb-3">Change Username</h1>
-       <center> <span style="color: gray; ">Input your new desire Username</span> </center>
+  <div>
+      <h1 class="justify-content-center d-flex">Change Username</h1>
+      <center><span style="color: gray;">Input your new desire Username</span></center>
+  </div>
+  <form action="" class="requires-validation" novalidate>
+    <div class=" mb-4 mt-5 form-floating">
+        <input type="text" class="form-control form-control-lg" id="validationServer01" placeholder="Annabelle Roxas" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+        <label for="validationServer01" class="form-label" style="color: gray;">Annabelle Roxas</label>
+      <div class="invalid-feedback">
+          Please provide atleast 10 characters.
+      </div>
+      <div class="valid-feedback">
+          Looks good!
+      </div>
     </div>
-    <div class="form-floating mt-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
-              <label for="validationServer01" class="form-label">Username</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            
-            
-            <center> <a href="./pages/home.php" class=" btn btn-primary btn-lg rounded-pill w-50 mt-5 ">Change Username</a> </center>
+    <div class="justify-content-center d-flex">
+        <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="button" style="box-shadow: -4px 4px #3FAA3D;">Change Username</button>
+    </div>    
+  </form>
 </div>
 
-    <script src="js/bootstrap.bundle.min.css"></script>
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+
+</script>
+
+<!-- BOTTOM NAVBAR -->
+<?php include '../pages/components/navbar-bottom.php'; ?>
+
+<script src="../assets/js/bootstrap.bundle.js"></script>
+<script src="../assets/js/all.min.js"></script>
+
 </body>
 </html>

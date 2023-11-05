@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Add Device</title>
+  <title>Plant.IQ | Add Device </title>
   <link rel="icon" href="../assets/img/icon.png">
 
   <link rel="icon" href="../assets/img/icon.png">
@@ -34,60 +34,49 @@
 
 
 <style>
-
-  
-
-
-  @media (max-width: 768px) {
-    .container {
-      margin-top: 100px;
-    }
-  }
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
 
 
-  .dropdown button {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-  }
+.dropdown button {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
 
-  .dropdown .dropdown-menu {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-  }
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
 
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
 
-  .dropdown a {
-    display: block;
-    padding: 8px 12px;
-    text-decoration: none;
-    color: #333;
-  }
+.dropdown a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+}
 
-  .dropdown a:hover {
-    background-color: #f5f5f5;
-  }
+.dropdown a:hover {
+  background-color: #f5f5f5;
+}
 </style>
-
-
 
   <!-- START CONTENT -->
   <div class="container">
-    <h1 class="text-center">Add Device</h1>
+    <h1 class="text-center fw-bold">Add Device</h1>
     <h6 class="text-center text-muted mb-4">INPUT PASSWORD TO CONNECT TO SSID</h6>
 
     <div class="card shadow mx-auto" style="max-width: 500px; border-radius:25px;"> <!-- Added mx-auto class for horizontal centering -->

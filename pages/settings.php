@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Home</title>
+  <title>Plant.IQ | Settings </title>
 
   <link rel="icon" href="../assets/img/icon.png">
   
@@ -28,21 +28,17 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar.php'; ?>
 
-
-
-  <div class="container pt-3 mt-5">
-      <div class="row">
-        <div class="col-9">
-          <h3 class="fw-bold mt-3">Settings</h3>
-          <h5 class="text-secondary fw-bold mt-4">
-    <a href="../pages/changeuser.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Username</a>
-</h5>
-<h5 class="text-secondary fw-bold mt-4">
-    <a href="../pages/changepass.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Password</a>
-</h5>
-
-        
-        </div>
+<div class="container pt-3 mt-5">
+    <div class="row">
+      <div class="col-9">
+        <h3 class="fw-bold mt-3">Settings</h3>
+        <h5 class="text-secondary fw-bold mt-4">
+          <a href="../pages/changeuser.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Username</a>
+        </h5>
+        <h5 class="text-secondary fw-bold mt-4">
+            <a href="../pages/changepass.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Password</a>
+        </h5>
+      </div>
         <div class="col-3 text-end arrow-col">
           <span class="arrow">></span>
         </div>

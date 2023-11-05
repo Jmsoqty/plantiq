@@ -80,13 +80,13 @@ include './php/userconfig.php';
             </div>
 
             <!-- <button type="submit" class="btn btn-lg" style="background-color: #26DB23; color: #ffffff;" >Log In</button> -->
-            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-50 mt-5">Login</a>
+            <a href="./pages/home.php" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50 mt-5" style="box-shadow: -4px 4px #3FAA3D;">Login</a>
 
-            <h5 class="text-center my-3">or</h5>
+            <h5 class="text-center">or</h5>
              
             <div class="d-flex justify-content-center">
-              <button type="button" onclick="signIn()" class="btn btn-light btn-lg">
-                <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
+              <button type="button" onclick="signIn()" class="btn btn-light btn-lg rounded-pill fw-bold" style="box-shadow: -4px 4px #BEB5B5;">
+                <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px; "> Continue with Google
               </button>
             </div>
              

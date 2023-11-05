@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Home</title>
+  <title>Plant.IQ | Change Password </title>
 
   <link rel="icon" href="../assets/img/icon.png">
   
@@ -26,65 +26,65 @@
   <?php include '../pages/components/cover.php'; ?>
 
   <!-- TOP NAVBAR -->
-  <?php include '../pages/components/navbar.php'; ?>
+  <?php include '../pages/components/navbar-back.php'; ?>
 
 <div class="container">
-<a href="../pages/settings.php" class="text-black">
-<i class="fa-solid fa-arrow-left"></i>
-</a>    
-    <div style="margin-top: 100px;">
-        <h1 class="justify-content-center d-flex">Change Password</h1>
-       <center> <span style="color: gray;">Input your desire Password</span> </center>
-    </div>
-    <div class="form-floating mt-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="NewPassword" required>
-              <label for="floatingconpassword" class="form-label">New Password</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            <div class="form-floating mt-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" required>
-              <label for="floatingconpassword" class="form-label">Confirm Password</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-           <center> <a href="./pages/home.php" class=" btn btn-primary btn-lg rounded-pill w-50 mt-5 ">Change Password</a> </center>
+  <div>
+    <h1 class="text-center">Change Password</h1>
+    <center><span style="color: gray;">Input your desire Password</span></center>
+  </div>
+    <form action="" class="requires-validation" novalidate>
+      <div class="mb-3 mt-5 form-floating">
+          <input type="password" class="form-control form-control-lg" placeholder="New Password" id="validationCustom01" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+          <label for="validationServer01" class="form-label" style="color: gray;">Enter Password</label>
+        <div class="invalid-feedback">
+            Please provide atleast 8 characters.
+        </div>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+      </div>
+
+      <div class="mb-5 form-floating">
+          <input type="password" class="form-control form-control-lg" placeholder="Confirm Password" id="validationCustom02" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+          <label for="validationServer01" class="form-label" style="color: gray;">Confirm Password</label>
+        <div class="invalid-feedback">
+            Please confirm your password correctly.
+        </div>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+      </div>
+
+      <div class="justify-content-center d-flex">
+          <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="button" style="box-shadow: -4px 4px #3FAA3D;">Change Password</button>
+      </div>    
+    </form>
 </div>
 
-<!--
-<div class="container mt-5">
-    <div class="card mx-auto shadow" style="width: 30rem;">
-    <h1 class="mx-auto mt-3">Change Password</h1>
-    <label class="mx-auto" style="color: grey;">input your desire password</label>
-    <div class="card-body">
-            <form action="tms_login_backend.php" method="post">
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingPass" placeholder="name@example.com">
-                    <label for="floatingPass">New Password</label>
-                    </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="floatingConfPassword" placeholder="Password">
-                    <label for="floatingConfPassword">Confirm Password</label>
-                </div>
-            </form>
-            <div class="justify-content-center d-flex mx-auto">
-                <a href="#">
-                    <button class="btn btn-success btn-lg mt-3">Confirm</button>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>    
--->
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-<script src="js/bootstrap.bundle.min.css"></script>
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+
+</script>
+
+<!-- BOTTOM NAVBAR -->
+<?php include '../pages/components/navbar-bottom.php'; ?>
+
+<script src="../assets/js/bootstrap.bundle.js"></script>
+<script src="../assets/js/all.min.js"></script>
+
 </body>
 </html>

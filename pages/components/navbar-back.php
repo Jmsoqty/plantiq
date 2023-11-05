@@ -2,7 +2,11 @@
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
       <div class="dropdown flex-grow-1">
-        
+        <div class="d-flex justify-content-start mt-2">
+          <a href="settings.php" class="btn btn-start">
+            <i class="fa-solid fa-arrow-left-long fa-2x"></i>
+          </a>      
+        </div>
       </div>
 
       <div class="dropdown">

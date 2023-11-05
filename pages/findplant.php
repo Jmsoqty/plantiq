@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Home</title>
+  <title>Plant.IQ | Find Plants</title>
 
   <link rel="icon" href="../assets/img/icon.png">
   
@@ -20,6 +20,78 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
+<style>
+
+  .card{
+    border-radius: 20px;
+  }
+
+  @media (max-width: 576px) {
+    .card img {
+      max-width: none; /* Prevent image from shrinking on mobile */
+      height: 230px; /* Keep the fixed height */
+    }
+    .description {
+      font-size: 8px; /* Adjust this value to your preference */
+    }
+    .type{
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 577px) and (max-width: 767px) {
+    .card img {
+      max-width: none; /* Prevent image from shrinking on mobile */
+      height: 230px; /* Keep the fixed height */
+    }
+    .description {
+      font-size: 8px; /* Adjust this value to your preference */
+    }
+    .type{
+      font-size: 30px;
+    }
+  }
+
+  @media (max-width: 768px) and (max-width: 991px) {
+    .card img {
+      max-width: none; /* Prevent image from shrinking on mobile */
+      height: 200px; /* Keep the fixed height */
+    }
+    .description {
+      font-size: 14px; /* Adjust this value to your preference */
+    }
+    .type{
+      font-size: 35px;
+    }
+  }
+
+  @media (max-width: 992px) and (max-width: 1023px) {
+    .card img {
+      max-width: none; /* Prevent image from shrinking on mobile */
+      height: 200px; /* Keep the fixed height */
+    }
+    .description {
+      font-size: 20px; /* Adjust this value to your preference */
+    }
+    .type{
+      font-size: 45px;
+    }
+  }
+
+  @media (max-width: 1024) and (max-width: 1200px) {
+    .card img {
+      max-width: none; /* Prevent image from shrinking on mobile */
+      height: 200px; /* Keep the fixed height */
+    }
+    .description {
+      font-size: 20px; /* Adjust this value to your preference */
+    }
+    .type{
+      font-size: 45px;
+    }
+  }
+</style>
+
 <body>
 
   <!-- CoverPhoto -->
@@ -28,98 +100,60 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar.php'; ?>
 
-<div class="container">
-<label class="display-4 mx-5"><b>Suggestions:</b> </label>
-<div class="card mx-2 my-2 shadow-lg">
-  <div class="card-body">
-    <div class="d-flex justify-content-start">
-        <div>
-        <img class="rounded img-fluid" id="img-plants" src="css/img/sili.jpg">
-        </div>
-
-        <div class="text">
-          <p>Recommended:</p>
-          <h6 class="headline">Red Chili Peppers</h6>
-          <h6 class="sub">7-10 Days</h6>
-
-          <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-        </div>
+<div class="container mt-5">
+  <div class="card">
+      <div class="card-body">
+          <div class="d-flex">
+            <div>
+              <img class="img-fluid img-responsive rounded-4" src="../assets/img/onion.jpg" alt="Garlic" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="ms-3">
+              <h5>Recommend: </h5>
+              <h1 class="type fw-bold">Onion</h1>
+              <h6 class="description">
+                An onion is a round vegetable with a brown skin that grows underground. 
+                It has many white layers on its inside which have a strong, sharp smell and taste.
+              </h6>
+            </div>
+          </div>
       </div>
-
-      <div class="boxy mt-3">
-        <div class="me-2">
-          <img class="img" src="css/img/sili.jpg" class="img-responsive">
-        </div>
-
-        <div class="text">
-          <p>Recommended:</p>
-          <h6 class="headline">Red Chili Peppers</h6>
-          <h6 class="sub">7-10 Days</h6>
-
-          <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-        </div>
-      </div>
-
-      <div class="boxy mt-3">
-        <div class="me-2">
-          <img class="img" src="css/img/sili.jpg" class="img-responsive">
-        </div>
-
-        <div class="text">
-          <p>Recommended:</p>
-          <h6 class="headline">Red Chili Peppers</h6>
-          <h6 class="sub">7-10 Days</h6>
-
-          <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-        </div>
-      </div>
-
-      <div class="boxy mt-3">
-        <div class="me-2">
-          <img class="img" src="css/img/sili.jpg" class="img-responsive">
-        </div>
-
-        <div class="text">
-          <p>Recommended:</p>
-          <h6 class="headline">Red Chili Peppers</h6>
-          <h6 class="sub">7-10 Days</h6>
-
-          <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-        </div>
-      </div>
-
-      <div class="boxy mt-3">
-        <div class="me-2">
-          <img class="img" src="css/img/sili.jpg" class="img-responsive">
-        </div>
-
-        <div class="text">
-          <p>Recommended:</p>
-          <h6 class="headline">Red Chili Peppers</h6>
-          <h6 class="sub">7-10 Days</h6>
-
-          <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-        </div>
-      </div>
-
-    </div>
   </div>
-</div>
-<div class="card mx-2 my-2 shadow-lg">
-  <div class="card-body">
-    <div class="d-flex justify-content-start">
-        <div>
-        <img class="rounded img-fluid" id="img-plants" src="css/img/sili.jpg">
-        </div>
-        <div class="mx-5">
-        <h3>Recommended:</h3>
-        <h1><b>Red Chili Peppers</b></h1>
-        <label>7 - 10 days</label>
-        <p>From there, you’ll need to include an RTL version of our CSS. For example, here’s the stylesheet for our compiled and minified CSS with RTL enabled:</p>
-        </div>
-    </div>
+<br>
+  <div class="card">
+      <div class="card-body">
+          <div class="d-flex">
+            <div>
+              <img class="img-fluid img-responsive rounded-4" src="../assets/img/cabbage.jpg" alt="Cabbage" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="ms-3">
+              <h5>Recommend: </h5>
+              <h1 class="type fw-bold">Cabbage</h1>
+              <h6 class="description">
+                An onion is a round vegetable with a brown skin that grows underground. 
+                It has many white layers on its inside which have a strong, sharp smell and taste.
+              </h6>
+            </div>
+          </div>
+      </div>
   </div>
-</div>
+<br>
+  <div class="card">
+      <div class="card-body">
+          <div class="d-flex">
+            <div>
+              <img class="img-fluid img-responsive rounded-4" src="../assets/img/garlic.jpg" alt="Garlic" style="width: 200px; height: 200px; object-fit: cover;">
+            </div>
+            <div class="ms-3">
+              <h5>Recommend: </h5>
+              <h1 class="type fw-bold">Garlic</h1>
+              <h6 class="description">
+                An onion is a round vegetable with a brown skin that grows underground. 
+                It has many white layers on its inside which have a strong, sharp smell and taste.
+              </h6>
+            </div>
+          </div>
+      </div>
+  </div>
 </div>
 
 <!-- BOTTOM NAVBAR -->
