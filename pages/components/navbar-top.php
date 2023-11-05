@@ -2,7 +2,7 @@
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
       <div class="dropdown flex-grow-1">
-        <button class="btn btn-outline-dark dropdown-toggle mt-2 ms-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-outline-dark btn-sm dropdown-toggle mt-2 ms-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           Switch Device
         </button>
         <ul class="dropdown-menu">
@@ -14,7 +14,7 @@
 
       <div class="dropdown">
         <a class="btn mt-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-bell fa-2xl navbtn"></i>
+            <i class="fa-solid fa-bell navbtn"></i>
             <span class="position-absolute top-21 start-51 translate-middle p-2 bg-danger border border-light rounded-circle">
                 <span class="visually-hidden">New alerts</span>
             </span>
@@ -38,7 +38,7 @@
       </div>
       <div class="dropdown">
       <button type="button" class="btn mt-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
-        <i class="fa-solid fa-arrow-right-from-bracket fa-2xl navbtn"></i>
+        <i class="fa-solid fa-arrow-right-from-bracket navbtn"></i>
       </button>
     </div>
   </div>

@@ -28,7 +28,6 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar.php'; ?>
 
-<<<<<<< HEAD
 <div class="container pt-3 mt-5">
     <div class="row">
       <div class="col-9">
@@ -41,26 +40,8 @@
         </h5>
       </div>
         <div class="col-3 text-end arrow-col">
-          <span class="arrow">></span>
+          <span class="arrow"></span>
         </div>
-=======
-
-
-  <div class="container pt-3 mt-5">
-      <div class="row">
-        <div class="col-9">
-          <h3 class="fw-bold mt-3">Settings</h3>
-          <h5 class="text-secondary fw-bold mt-4">
-    <a href="../pages/changeuser.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Username</a>
-</h5>
-<h5 class="text-secondary fw-bold mt-4">
-    <a href="../pages/changepass.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Password</a>
-</h5>
-
-        
-        </div>
-       
->>>>>>> 22d23d7b92134d0cce710f726ae1053ddceef996
       </div>
     </div>
   </div>

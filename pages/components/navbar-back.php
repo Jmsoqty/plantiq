@@ -11,7 +11,7 @@
 
       <div class="dropdown">
       <a class="btn mt-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-bell fa-2xl navbtn"></i>
+            <i class="fa-solid fa-bell navbtn"></i>
             <span class="position-absolute top-21 start-51 translate-middle p-2 bg-danger border border-light rounded-circle">
                 <span class="visually-hidden">New alerts</span>
             </span>
@@ -34,7 +34,7 @@
         </ul>
       </div>
       <div class="dropdown">
-        <a href="../index.php" class="btn mt-2"><i class="fa-solid fa-arrow-right-from-bracket fa-2xl navbtn"></i> </a>
+        <a href="../index.php" class="btn mt-2"><i class="fa-solid fa-arrow-right-from-bracket navbtn"></i> </a>
       </div>
 
 

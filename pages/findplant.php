@@ -101,6 +101,7 @@
   <?php include '../pages/components/navbar.php'; ?>
 
 <div class="container mt-5">
+  <h2 class="position-relative">Suggestions:</h2>
   <div class="card">
       <div class="card-body">
           <div class="d-flex">

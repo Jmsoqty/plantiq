@@ -29,7 +29,7 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-top.php'; ?>
   <div class="status-container">
-  <h6 class="active-status mt-2 ms-2">
+  <h6 class="active-status mt-2 ms-2 position-relative">
     Status:  Connected <span class="circle"></span>
   </h6>
 </div>
