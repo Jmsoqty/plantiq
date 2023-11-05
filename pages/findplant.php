@@ -98,8 +98,14 @@
   <?php include '../pages/components/cover.php'; ?>
 
   <!-- TOP NAVBAR -->
-  <?php include '../pages/components/navbar.php'; ?>
+  <?php include '../pages/components/navbar-find.php'; ?>
 
+  
+ 
+           
+  <h1 class="active-status mt-2 ms-2">
+    Suggestions:
+  </h1>
 <div class="container mt-5">
   <h2 class="position-relative">Suggestions:</h2>
   <div class="card">

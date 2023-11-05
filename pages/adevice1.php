@@ -27,9 +27,10 @@
 <body>
 
     <!-- CoverPhoto -->
+  <?php include '../pages/components/cover.php'; ?>
 
     <!-- TOP NAVBAR -->
-    <?php include '../pages/components/navbar-top.php'; ?>
+    <?php include '../pages/components/navbar.php'; ?>
 
     <!-- START CONTENT -->
     <div class="container">
