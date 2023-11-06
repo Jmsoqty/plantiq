@@ -41,6 +41,16 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
+<style>
+    .message1 {
+        display: none;
+        color: red;
+    }
+    .message2 {
+        display: none;
+        color: green;
+    }
+</style>
 <body>
 
 <!-- CoverPhoto -->
@@ -55,17 +65,26 @@ if (isset($_SESSION['email'])) {
     <form method="post" action="php/otp.php" class="requires-validation" novalidate>
         <div class="mx-auto text-center">
             <div  class="form-floating">
-                <input type="hidden" name="correct_otp" value="<?php echo $otp; ?>">
-                <input type="number" class="form-control form-control-lg my-4" name="otp" id="validationServer01" placeholder="Enter OTP" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-                <label for="validationServer01" class="form-label" style="color: gray;">Enter OTP</label>
+            <input type="hidden" name="correct_otp" value="<?php echo $otp; ?>">
+                <input type="number" id="code" class="form-control form-control-lg" name="otp" id="validationServer01" placeholder="Enter OTP" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+                <label for="validationServer01" class="form-label text-secondary">Enter OTP</label>
+                <div class="message1" id="wrongMessage">Wrong code, please try again.</div>
+                <div class="message2" id="correctMessage">Correct code! Access granted.</div>
             </div>
-            <label>EMAIL / <span style="color: green">ENTER OTP </span>/ NEW PASSWORD</label>
+            <div class="mx-auto text-center">
+                <nav aria-label="breadcrumb mt-2">
+                    <ol class="breadcrumb justify-content-center">
+                        <li class="breadcrumb-item"><a class="text-secondary">Email</a></li>
+                        <li class="breadcrumb-item"><a class="text-success fw-semibold" href="otp.php">Enter OTP</a></li>
+                        <li class="breadcrumb-item"><a class="text-secondary">New Password</a></li>
+                    </ol>
+                </nav>
+                <div class="justify-content-center d-flex">
+                    <button type="submit" class="btn btn-primary btn-lg fw-bold m-5 rounded-pill" onclick="checkCode()" style="box-shadow: -4px 4px #3FAA3D;">Submit</button>
+                </div>
+            </div>          
         </div>
     </form>
-
-    <div class="justify-content-center d-flex">
-        <button type="submit" class="btn btn-primary btn-lg fw-bold m-5 rounded-pill" style="box-shadow: -4px 4px #3FAA3D;">Submit</button>
-    </div>
 
     <?php
         // Display error messages if they were passed in the URL
@@ -99,23 +118,46 @@ if (isset($_SESSION['email'])) {
 
 <script>
     (function () {
-    'use strict';
-    const forms = document.querySelectorAll('.requires-validation');
-    Array.from(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
+        'use strict';
+        const forms = document.querySelectorAll('.requires-validation');
+        Array.from(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
 
-        form.classList.add('was-validated');
-        }, false);
-    });
+                form.classList.add('was-validated');
+            }, false);
+        });
     })();
 </script>
 
-<script src="../assets/js/bootstrap.bundle.js"></script>
-<script src="../assets/js/all.min.js"></script>
+
+<script>
+    function checkCode() {
+        var codeInput = document.getElementById('code').value;
+        var wrongMessage = document.getElementById('wrongMessage');
+        var correctMessage = document.getElementById('correctMessage');
+
+        if (codeInput === '1234') {
+            wrongMessage.style.display = 'none';
+            correctMessage.style.display = 'block';
+            document.getElementById('code').setCustomValidity('');
+
+        } else {
+            wrongMessage.style.display = 'block';
+            correctMessage.style.display = 'none';
+            document.getElementById('code').setCustomValidity('Invalid code');
+        }
+    }
+</script>
+
+
+
+  <!-- JavaScript -->
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/all.min.js"></script>
 
 </body>
 </html>

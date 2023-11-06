@@ -27,6 +27,7 @@
 <body>
 
     <!-- CoverPhoto -->
+    <?php include '../pages/components/cover.php'; ?>
 
     <!-- TOP NAVBAR -->
     <?php include '../pages/components/navbar-top.php'; ?>

@@ -20,6 +20,19 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
+<style>
+    #passwordMatch {
+        font-weight: bold;
+    }
+
+    .match {
+        color: green;
+    }
+
+    .no-match {
+        color: red;
+    }
+</style>
 <body>
 
   <!-- CoverPhoto -->
@@ -33,31 +46,25 @@
     <h1 class="text-center">Change Password</h1>
     <center><span style="color: gray;">Input your desire Password</span></center>
   </div>
-    <form action="" class="requires-validation" novalidate>
+    <form action="" onsubmit="return validateForm()" class="requires-validation" novalidate>
       <div class="mb-3 mt-5 form-floating">
-          <input type="password" class="form-control form-control-lg" placeholder="New Password" id="validationCustom01" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+
+          <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="New Password"  id="validationServer01" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"required>
           <label for="validationServer01" class="form-label" style="color: gray;">Enter Password</label>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback mb-2">
             Please provide atleast 8 characters.
         </div>
-        <div class="valid-feedback">
-            Looks good!
-        </div>
+        
       </div>
 
-      <div class="mb-5 form-floating">
-          <input type="password" class="form-control form-control-lg" placeholder="Confirm Password" id="validationCustom02" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-          <label for="validationServer01" class="form-label" style="color: gray;">Confirm Password</label>
-        <div class="invalid-feedback">
-            Please confirm your password correctly.
-        </div>
-        <div class="valid-feedback">
-            Looks good!
-        </div>
+      <div class="mb-2 form-floating">
+          <input type="password" id="confirmPassword" class="form-control form-control-lg" placeholder="Confirm Password" id="validationCustom02" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"required>
+          <label for="validationServer02" class="form-label" style="color: gray;">Confirm Password</label>
+          <span id="passwordMatch"></span>
       </div>
 
       <div class="justify-content-center d-flex">
-          <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="button" style="box-shadow: -4px 4px #3FAA3D;">Change Password</button>
+          <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="submit" style="box-shadow: -4px 4px #3FAA3D;">Change Password</button>
       </div>    
     </form>
 </div>
@@ -77,9 +84,49 @@
     }, false);
   });
 })();
-
 </script>
 
+<script>
+        const newPasswordInput = document.getElementById("newPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const passwordMatchLabel = document.getElementById("passwordMatch");
+
+        function validatePassword() {
+            const newPassword = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (newPassword !== confirmPassword) {
+                passwordMatchLabel.classList.remove("match");
+                passwordMatchLabel.classList.add("no-match");
+                passwordMatchLabel.textContent = "Passwords do not match";
+            } else {
+                passwordMatchLabel.classList.remove("no-match");
+                passwordMatchLabel.classList.add("match");
+                passwordMatchLabel.textContent = "Passwords match";
+            }
+        }
+
+        newPasswordInput.addEventListener("input", validatePassword);
+        confirmPasswordInput.addEventListener("input", validatePassword);
+</script>
+
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+
+</script>
 <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>
 

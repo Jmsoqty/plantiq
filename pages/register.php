@@ -39,87 +39,82 @@ unset($_SESSION['email']);
   <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
+<style>
+    #passwordMatch {
+        font-weight: bold;
+    }
 
+    .match {
+        color: green;
+    }
+
+    .no-match {
+        color: red;
+    }
+</style>
 <body>
-
-  
-<form class="requires-validation" novalidate>
+<form class="requires-validation" novalidate onsubmit="return validateForm()">
   <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="text-center" style="border-radius: 1rem;">
-
-    
-
             <h3 class="fw-bold mb-4">Register your Account</h3>
 
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
-              <label for="validationServer01" class="form-label">Username</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Email" required>
-              <label for="validationServer02" class="form-label">Email</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
-              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
-              <label for="floatingPassword">Password</label>
-              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
-            </div>
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
-              <input type="text" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" required>
-              <label for="floatingconpassword" class="form-label">Confirm Password</label>
-              <div class="valid-feedback">
-                Looks good!
-              </div>
-              <div class="invalid-feedback">
-                Not look good!
-              </div>
+            <div class="form-floating mb-2 text-start rounded-4">
+                <input type="text" id="textInput" class="form-control rounded-4" id="floatingInput" placeholder="Username"  autocomplete="off" maxlength="20" required>
+                <label for="validationServer01" class="form-label">Username</label>
+                <div class="invalid-feedback">
+                </div>
+                <span id="validationMessage" style="color: red;"></span>
+
             </div>
 
+            <div class="form-floating mb-2 text-start rounded-4" id="emailForm">
+                <input type="text" id="emailInput" class="form-control rounded-4" id="floatingInput" placeholder="Email" autocomplete="" required>
+                <label for="emailInput" class="form-label">Email</label>
+                <span id="emailStatus"></span>
+            </div>
+
+            <div class="form-floating mb-2 text-start rounded-4">
+                <input type="password" id="newPassword" class="form-control rounded-4" id="floatingPassword" placeholder="Password" maxlength="15" required>
+                <label for="floatingPassword">Password</label>
+                <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
+                <div class="invalid-feedback mb-2">
+                  Provide at least 10 characters.
+                </div>
+            </div>
+
+            <div class="form-floating mb-2 text-start rounded-4">
+                <input type="password" id="confirmPassword" class="form-control rounded-4" id="floatingPassword" placeholder="ConfirmPassword" maxlength="15" required>
+                <label for="floatingconpassword" class="form-label">Confirm Password</label>
+                <span id="passwordMatch"></span>
+
+            </div>
             
-            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-50 mt-2">Register Account</a>
-
-<h5 class="text-center my-3">or</h5>
+            <a href="./pages/home.php" class="btn btn-primary btn-lg rounded-pill w-50 mt-2" style="box-shadow: -4px 4px #3FAA3D;">Register Account</a>
+            <h5 class="text-center my-3">or</h5>
  
-<div class="d-flex justify-content-center">
-  <button type="button" onclick="signIn()" class="btn btn-light btn-lg">
-    <img src="../assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
-  </button>
-</div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" onclick="signIn()" class="btn btn-light btn-lg rounded-pill fw-bold" style="box-shadow: -4px 4px #BEB5B5;">
+                <img src="../assets/img/google.png" alt="Google Logo"  style="width: 30px; height: 30px; margin-right: 5px;"> Continue with Google
+              </button>
+            </div>
  
-<div class="d-flex justify-content-around mt-3">
-  <a class="text-decoration-none text-dark">Already have an account?</a>
-  <a class="text-decoration-none text-primary" href="../index.php">Login</a>
-</div>
+            <div class="d-flex justify-content-around mt-3">
+              <a class="text-decoration-none text-dark">Already have an account?</a>
+              <a class="text-decoration-none text-primary" href="../index.php">Login</a>
+            </div>
+            <br><br>
 
-<br><br>
-
-</div>  
-</div>
-</div>
-</div>
-</section>
+          </div>  
+        </div>
+      </div>
+    </div>
+  </section>
 </form>
+
+
 <script>
   const fullNameInput = document.querySelector('input[name="fullname"]');
       fullNameInput.addEventListener('keypress', function(event) {
@@ -130,6 +125,87 @@ unset($_SESSION['email']);
         }
   });
 </script>
+
+<!-- Username Script -->
+<script>
+    const textInput = document.getElementById("textInput");
+    const validationMessage = document.getElementById("validationMessage");
+
+    function validateInput() {
+        const inputValue = textInput.value;
+
+        // Regular expression to allow only alphanumeric characters and spaces
+        const regex = /^[a-zA-Z0-9\s]+$/;
+
+        if (!regex.test(inputValue)) {
+            validationMessage.textContent = "Special characters are not allowed.";
+        } else {
+            validationMessage.textContent = "";
+        }
+    }
+
+    textInput.addEventListener("input", validateInput);
+  </script>
+
+<!-- Email Script -->
+<script>
+  const emailInput = document.getElementById("emailInput");
+  const emailStatus = document.getElementById("emailStatus");
+  const emailForm = document.getElementById("emailForm");
+
+  function validateEmail() {
+      const email = emailInput.value;
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!regex.test(email)) {
+          emailStatus.textContent = "Invalid email address";
+          emailStatus.style.color = "red";
+          return false;
+      } else {
+          emailStatus.textContent = "Valid email address";
+          emailStatus.style.color = "green";
+          return true;
+      }
+  }
+
+  emailForm.addEventListener("submit", function(event) {
+      if (!validateEmail()) {
+          event.preventDefault(); // Prevent form submission
+      }
+  });
+
+  emailInput.addEventListener("input", function() {
+      validateEmail();
+  });
+</script>
+
+
+<!-- NewPass and ConfirmPass Script -->
+<script>
+        const newPasswordInput = document.getElementById("newPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const passwordMatchLabel = document.getElementById("passwordMatch");
+
+        function validatePassword() {
+            const newPassword = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (newPassword !== confirmPassword) {
+                passwordMatchLabel.classList.remove("match");
+                passwordMatchLabel.classList.add("no-match");
+                passwordMatchLabel.textContent = "Passwords do not match";
+            } else {
+                passwordMatchLabel.classList.remove("no-match");
+                passwordMatchLabel.classList.add("match");
+                passwordMatchLabel.textContent = "Passwords match";
+            }
+        }
+
+        newPasswordInput.addEventListener("input", validatePassword);
+        confirmPasswordInput.addEventListener("input", validatePassword);
+</script>
+
+
 <script>
     if (window.performance) {
       if (performance.navigation.type == 1) {
@@ -146,6 +222,6 @@ unset($_SESSION['email']);
        document.getElementById('password').type = "password";
     }
 };
-    </script>
+</script>
 </body>
 </html>

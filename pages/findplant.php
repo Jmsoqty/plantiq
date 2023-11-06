@@ -58,7 +58,7 @@
       height: 200px; /* Keep the fixed height */
     }
     .description {
-      font-size: 14px; /* Adjust this value to your preference */
+      font-size: 20px; /* Adjust this value to your preference */
     }
     .type{
       font-size: 35px;
@@ -90,6 +90,13 @@
       font-size: 45px;
     }
   }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    height: 200px; /* Adjust this value to your preference */
+  }
 </style>
 
 <body>
@@ -101,59 +108,59 @@
   <?php include '../pages/components/navbar.php'; ?>
 
 <div class="container mt-5">
-  <div class="card">
-      <div class="card-body">
-          <div class="d-flex">
-            <div>
-              <img class="img-fluid img-responsive rounded-4" src="../assets/img/onion.jpg" alt="Garlic" style="width: 200px; height: 200px; object-fit: cover;">
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="card col-md-4">
+            <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="Garlic">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Recommend: </h5>
+                <h1>Cabbage</h1>
+                <p class="card-text">
+                    An onion is a round vegetable with a brown skin that grows underground. 
+                    It has many white layers on its inside which have a strong, sharp smell and taste.
+                </p>
             </div>
-            <div class="ms-3">
-              <h5>Recommend: </h5>
-              <h1 class="type fw-bold">Onion</h1>
-              <h6 class="description">
-                An onion is a round vegetable with a brown skin that grows underground. 
-                It has many white layers on its inside which have a strong, sharp smell and taste.
-              </h6>
-            </div>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
+</div>
 <br>
-  <div class="card">
-      <div class="card-body">
-          <div class="d-flex">
-            <div>
-              <img class="img-fluid img-responsive rounded-4" src="../assets/img/cabbage.jpg" alt="Cabbage" style="width: 200px; height: 200px; object-fit: cover;">
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="card col-md-4">
+            <img class="img-fluid rounded-4" src="../assets/img/cabbage.jpg" alt="Cabbage">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Recommend:</h5>
+                <h1>Cabbage</h1>
+                <p class="card-text">
+                    A cabbage is a round vegetable with a green leafy exterior. 
+                    It is commonly used in salads and various dishes.
+                </p>
             </div>
-            <div class="ms-3">
-              <h5>Recommend: </h5>
-              <h1 class="type fw-bold">Cabbage</h1>
-              <h6 class="description">
-                An onion is a round vegetable with a brown skin that grows underground. 
-                It has many white layers on its inside which have a strong, sharp smell and taste.
-              </h6>
-            </div>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
+</div>
 <br>
-  <div class="card">
-      <div class="card-body">
-          <div class="d-flex">
-            <div>
-              <img class="img-fluid img-responsive rounded-4" src="../assets/img/garlic.jpg" alt="Garlic" style="width: 200px; height: 200px; object-fit: cover;">
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="card col-md-4">
+            <img class="img-fluid rounded-4" src="../assets/img/garlic.jpg" alt="Garlic">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Recommend:</h5>
+                <h1>Cabbage</h1>
+                <p class="card-text">
+                    Garlic is a pungent bulb that is commonly used as a seasoning in various dishes.
+                    It adds a distinct flavor and aroma to food.
+                </p>
             </div>
-            <div class="ms-3">
-              <h5>Recommend: </h5>
-              <h1 class="type fw-bold">Garlic</h1>
-              <h6 class="description">
-                An onion is a round vegetable with a brown skin that grows underground. 
-                It has many white layers on its inside which have a strong, sharp smell and taste.
-              </h6>
-            </div>
-          </div>
-      </div>
-  </div>
+        </div>
+    </div>
+</div>
 </div>
 
 <!-- BOTTOM NAVBAR -->

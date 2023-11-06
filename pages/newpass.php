@@ -37,6 +37,19 @@ if (isset($_SESSION['email'])) {
   <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
+<style>
+    #passwordMatch {
+        font-weight: bold;
+    }
+
+    .match {
+        color: green;
+    }
+
+    .no-match {
+        color: red;
+    }
+</style>
 <body>
 <!-- CoverPhoto -->
 <?php include '../pages/components/cover.php'; ?>
@@ -46,38 +59,38 @@ if (isset($_SESSION['email'])) {
     <div class="justify-content-center d-flex" style="margin-top: 50px; margin-bottom: 50px;">
         <h1>Forgot Password</h1>
     </div>
-    
-    <form action="php/reset_password.php" method="post" class="requires-validation" novalidate>
-        <div class="mx-auto text-align">
-            <div class="form-floating mb-2">
-                <input type="hidden" name="email" value="<?php echo $email; ?>">
-                <input type="password" name="password" class="form-control form-control-lg" id="validationServer01" placeholder="Enter New Password" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-                <label for="validationServer01" class="form-label" style="color: gray;">New Password</label>
-                <div class="invalid-feedback mb-2">
-                    Provide atleast 10 characters.
-                </div>
-                <div class="valid-feedback">
-                </div>
-            </div>
-            <div class="form-floating mb-2">
-                    <input type="password" name="confirm_password" class="form-control form-control-lg" id="validationServer02" placeholder="Confirm Password" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-                <label for="validationServer02" class="form-label" style="color: gray;">Confirm Password</label>
-                <div class="invalid-feedback mb-2">
-                    Please enter correct password.
-                </div>
-                <div class="valid-feedback">
-                    Password Match
-                </div>
+<form action="php/reset_password.php" method="post" onsubmit="return validateForm()" class="requires-validation" novalidate>
+    <div class="mx-auto text-align">
+        <div class="form-floating mb-2">
+            <input type="password" id="newPassword" class="form-control form-control-lg" id="validationServer01"
+                placeholder="New Password" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"
+                required>
+            <label for="validationServer01" class="form-label" style="color: gray;">New Password </label>
+            <div class="invalid-feedback mb-2">
+                Provide at least 10 characters.
             </div>
         </div>
-
-        <div class="text-center">
-            <label>EMAIL / ENTER OTP/<span style="color: green"> NEW PASSWORD</span></label><br>
-            <button type="submit" class="btn btn-primary btn-lg fw-bold m-5 rounded-pill" style="box-shadow: -4px 4px #3FAA3D;">Save Changes</button>
+        <div class="form-floating mb-2">
+            <input type="password" id="confirmPassword" class="form-control form-control-lg" id="validationServer02"
+                placeholder="Confirm Password" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15" required>
+            <label for="validationServer02" class="form-label" style="color: gray;">Confirm Password</label>
+            <span id="passwordMatch"></span>
         </div>
-    </form>
-
-    <br><br><br>
+    </div>
+    <div class="mx-auto text-center">
+        <nav aria-label="breadcrumb mt-2">
+            <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item"><a class="text-secondary">Email</a></li>
+            <li class="breadcrumb-item"><a class="text-secondary">Enter OTP</a></li>
+            <li class="breadcrumb-item"><a class="text-success fw-semibold" href="newpass.php">New Password</a></li>
+            </ol>
+        </nav>
+        <div class="justify-content-center d-flex">
+            <button type="submit" class="btn btn-primary btn-lg fw-bold m-5 rounded-pill" style="box-shadow: -4px 4px #3FAA3D;">Submit</button>
+        </div>
+    </div>    
+</form>
+<br><br><br>
     <div class="mx-auto text-center" style="margin-top: 100px;">
         <label style="color: grey">You remember your account?</label>  <a href="../index.php" style="color: green">Login</a>
     </div>
@@ -92,26 +105,52 @@ if (isset($_SESSION['email'])) {
     }
 </script>
 
+<!-- Confirmation Script --> 
 <script>
-    (function () {
-    'use strict';
-    const forms = document.querySelectorAll('.requires-validation');
-    Array.from(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-        if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
+        const newPasswordInput = document.getElementById("newPassword");
+        const confirmPasswordInput = document.getElementById("confirmPassword");
+        const passwordMatchLabel = document.getElementById("passwordMatch");
+
+        function validatePassword() {
+            const newPassword = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+
+            if (newPassword !== confirmPassword) {
+                passwordMatchLabel.classList.remove("match");
+                passwordMatchLabel.classList.add("no-match");
+                passwordMatchLabel.textContent = "Passwords do not match";
+            } else {
+                passwordMatchLabel.classList.remove("no-match");
+                passwordMatchLabel.classList.add("match");
+                passwordMatchLabel.textContent = "Passwords match";
+            }
         }
 
-        form.classList.add('was-validated');
-        }, false);
-    });
-    })();
+        newPasswordInput.addEventListener("input", validatePassword);
+        confirmPasswordInput.addEventListener("input", validatePassword);
 </script>
 
+<!-- Validation Script -->
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-<script src="../assets/js/bootstrap.bundle.js"></script>
-<script src="../assets/js/all.min.js"></script>
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+</script>
+
+    <!-- JavaScript -->
+    <script src="../assets/js/bootstrap.bundle.js"></script>
+    <script src="../assets/js/all.min.js"></script>
 
 </body>
 </html>

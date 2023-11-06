@@ -36,17 +36,15 @@
   </div>
   <form action="" class="requires-validation" novalidate>
     <div class=" mb-4 mt-5 form-floating">
-        <input type="text" class="form-control form-control-lg" id="validationServer01" placeholder="Annabelle Roxas" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-        <label for="validationServer01" class="form-label" style="color: gray;">Annabelle Roxas</label>
+        <input type="text" id="textInput" class="form-control form-control-lg" id="validationServer01" placeholder="Annabelle Roxas" style="border-radius: 10px;" fdprocessedid="s1ri14" autocomplete="off" maxlength="20" required>
+        <label for="textInput" class="form-label" style="color: gray;">Annabelle Roxas</label>
       <div class="invalid-feedback">
-          Please provide atleast 10 characters.
       </div>
-      <div class="valid-feedback">
-          Looks good!
-      </div>
+      <span id="validationMessage" style="color: red;"></span>
+
     </div>
     <div class="justify-content-center d-flex">
-        <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="button" style="box-shadow: -4px 4px #3FAA3D;">Change Username</button>
+        <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="submit" style="box-shadow: -4px 4px #3FAA3D;">Change Username</button>
     </div>    
   </form>
 </div>
@@ -68,6 +66,26 @@
 })();
 
 </script>
+
+<script>
+        const textInput = document.getElementById("textInput");
+        const validationMessage = document.getElementById("validationMessage");
+
+        function validateInput() {
+            const inputValue = textInput.value;
+
+            // Regular expression to allow only alphanumeric characters and spaces
+            const regex = /^[a-zA-Z0-9\s]+$/;
+
+            if (!regex.test(inputValue)) {
+                validationMessage.textContent = "Special characters are not allowed.";
+            } else {
+                validationMessage.textContent = "";
+            }
+        }
+
+        textInput.addEventListener("input", validateInput);
+    </script>
 
 <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>

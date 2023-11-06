@@ -34,12 +34,11 @@
 
 
 <style>
+  
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
-
 
 .dropdown button {
   background-color: #f5f5f5;
@@ -72,35 +71,58 @@
 .dropdown a:hover {
   background-color: #f5f5f5;
 }
-</style>
 
+</style>
   <!-- START CONTENT -->
-  <div class="container">
+<div class="container">
     <h1 class="text-center fw-bold">Add Device</h1>
     <h6 class="text-center text-muted mb-4">INPUT PASSWORD TO CONNECT TO SSID</h6>
+  <div class="card shadow mx-auto" style="max-width: 500px; border-radius:25px;"> <!-- Added mx-auto class for horizontal centering -->
+    <div class="card-body">
+      <h4 class="card-title text-center mb-4">Connect SSID</h4>
+      <h2 class="card-title mb-4">SSID: ESP8266</h2>
 
-    <div class="card shadow mx-auto" style="max-width: 500px; border-radius:25px;"> <!-- Added mx-auto class for horizontal centering -->
-      <div class="card-body">
-        <h4 class="card-title text-center mb-4">Connect SSID</h4>
-        <h2 class="card-title mb-4">SSID: ESP8266</h2>
-        <div>
-
-          <div class="input">
-            <input type="text" class="form-control form-control-lg" placeholder="Password" aria-label="Password" aria-describedby="seeButton" required>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center">
-          <a href="adevice1.php">
-            <button class="btn btn-success btn-lg mt-3" style="background-color: #26DB23;">Connect</button>
-          </a>
-        </div>
+      <form class="requires-validation" novalidate>
+            <div class=" mb-4 form-floating">
+                <input type="password" class="form-control form-control-lg" id="validationServer01" placeholder="Password" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+                <label for="validationServer01" class="form-label" style="color: gray;">Password</label>
+                <div class="invalid-feedback">
+                    Please input your password correctly.
+                </div>
+                <div class="valid-feedback">
+                    Looks good!
+                </div>
+            </div>
+      </form>
+      <div class="d-flex justify-content-center">
+        <a href="adevice1.php">
+          <button type="submit" class="btn btn-success btn-lg mt-3" style="background-color: #26DB23;">Connect</button>
+        </a>
       </div>
     </div>
-
   </div>
+</div>
   <!-- BOTTOM NAVBAR -->
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
+
+<script>
+(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
+
+</script>
   <script src="../assets/js/bootstrap.bundle.js"></script>
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/navbarmenu.js"></script>

@@ -54,9 +54,15 @@ include '../php/userconfig.php';
             </div>
         </div>
         
-        <div class="mx-auto text-center">
-            <label><span style="color: green">EMAIL </span>/ ENTER OTP / NEW PASSWORD</label><br>
-            <button type="submit" class="btn btn-primary btn-lg m-5 rounded-pill fw-bold" style="box-shadow: -4px 4px #3FAA3D;">Send OTP</button>
+        <div class="mx-auto text-center  mt-2">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a class="text-success fw-semibold" href="forgotpass.php">Email</a></li>
+              <li class="breadcrumb-item"><a class="text-secondary">Enter OTP</a></li>
+              <li class="breadcrumb-item"><a class="text-secondary">New Password</a></li>
+            </ol>
+          </nav>
+          <button type="submit" class="btn btn-primary btn-lg m-5 rounded-pill fw-bold" style="box-shadow: -4px 4px #3FAA3D;">Send OTP</button>
         </div>
     </form>
     
@@ -112,7 +118,9 @@ include '../php/userconfig.php';
 
 </script>
 
-<script src="../assets/js/bootstrap.bundle.js"></script>
-<script src="../assets/js/all.min.js"></script>
+  <!-- JavaScript -->
+  <script src="../assets/js/bootstrap.bundle.js"></script>
+  <script src="../assets/js/all.min.js"></script>
+
 </body>
 </html>

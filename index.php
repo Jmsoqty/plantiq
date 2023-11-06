@@ -23,7 +23,7 @@ include './php/userconfig.php';
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Open+Sans:wght@300;400;500;600;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">  <link rel="stylesheet" href="css\node_modules\bootstrap\dist\css\bootstrap.min.css">
-  
+  <script src ="scripts/google-api.js"></script>
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
@@ -48,7 +48,7 @@ include './php/userconfig.php';
 
             <h5 class="fw-bold mb-3">Login to your Account</h5>
 
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
+            <div class="form-floating mb-3 text-start rounded-4">
               <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
               <label for="validationServer01" class="form-label">Username</label>
               <div class="valid-feedback">
@@ -59,8 +59,8 @@ include './php/userconfig.php';
               </div>
             </div>
 
-            <div class="form-floating mb-3 text-start border border-dark rounded-4">
-              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password">
+            <div class="form-floating mb-3 text-start rounded-4">
+              <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" required>
               <label for="floatingPassword">Password</label>
               <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
               <div class="valid-feedback">
@@ -89,7 +89,6 @@ include './php/userconfig.php';
                 <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px; "> Continue with Google
               </button>
             </div>
-             
             <div class="d-flex justify-content-around mt-3">
               <a class="text-decoration-none text-dark">Don't have Account?</a>
               <a class="text-decoration-none text-primary" href="pages/register.php">Create Account</a>
