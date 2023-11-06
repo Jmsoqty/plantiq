@@ -39,12 +39,9 @@
             <a href="../pages/changepass.php" class="text-decoration-none text-black"><i class="fas fa-pencil-alt"></i>Change Password</a>
         </h5>
       </div>
-<<<<<<< HEAD
         <div class="col-3 text-end arrow-col">
           <span class="arrow"></span>
         </div>
-=======
->>>>>>> f38f364fc1cd27bfc1cb5949a9992b97926d51c9
       </div>
     </div>
   </div>

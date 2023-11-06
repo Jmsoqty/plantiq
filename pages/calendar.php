@@ -60,9 +60,11 @@
       <div class="modal" id="schedule-form-modal" tabindex="-1" role="dialog">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
-      <div class="modal-header bg-gradient bg-primary text-light">
-        <h5 class="modal-title">Schedule Form</h5>
-      </div>
+    <div class="modal-header bg-gradient bg-primary text-light">
+    <h5 class="modal-title">Schedule Form</h5>
+    <button type="button" class="close btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
       <div class="modal-body">
         <form action="../php/save_schedule.php" method="post" id="schedule-form">
           <input type="hidden" name="id" value="">
@@ -84,7 +86,7 @@
           </div>
           <div class="text-center">
             <button class="btn btn-primary btn-sm rounded-0" type="submit"><i class="fa fa-save"></i> Save</button>
-            <butto  class ="close btn btn-default border btn-sm rounded-0" type="button" data-dismiss="modal"><i class="fa fa-reset"></i> Cancel</button>
+           
 
           </div>
         </form>
@@ -176,6 +178,7 @@
 
   <!-- Event Details Modal -->
   <script>
+    
  // Function to open the modal
 function openModal() {
   var modal = document.getElementById("schedule-form-modal");
