@@ -1,46 +1,38 @@
 <!-- COVER TOP NAVBAR -->
-<!--<div>
-  <img src="../assets/img/cover.png" class="img-fluid m-0 p-0 position-absolute" id="cover">
-</div>-->
 
 <div>
-  <img src="../assets/img/cover1.svg" class="circles-1 img-fluid position-absolute" alt="Responsive SVG">
+  <img src="../assets/img/covertop.svg" class="img-fluid custom-svg position-absolute" alt="">
 </div>
 
-
 <style>
-  .circles-1 {
-    top: -82%;
-    width: 100%;
+  
+/* Media query for screens with a maximum width of 576px (Extra Small - xs) */
+@media (min-width: 575.98px) {
+  .custom-svg {
+    top: -18%;
   }
+}
 
-  @media (max-width: 576px) {
-    .circles-1 {
-      top: -42%; /* Adjust this value to your preference */
-    }
+/* Media query for screens with a minimum width of 576px (Small - sm) */
+@media (max-width: 576px) {
+  .custom-svg {
+    top: -18%;
   }
+}
 
-  @media (min-width: 577px) and (max-width: 767px) {
-    .circles-1 {
-      top: -42%; /* Adjust this value to your preference */
-    }
+/* Media query for screens with a minimum width of 768px (Medium - md) */
+@media (max-width: 768px) {
+  .custom-svg {
+    top: -18%;
   }
+}
 
-  @media (min-width: 768px) and (max-width: 991px) {
-    .circles-1 {
-      top: -53%; /* Adjust this value to your preference */
-    }
+/* Media query for screens with a minimum width of 992px (Large - lg) */
+@media (min-width: 992px) {
+  .custom-svg {
+    top: -85%;
   }
+}
 
-  @media (min-width: 992px) and (max-width: 1199px) {
-    .circles-1 {
-      top: -76%; /* Adjust this value to your preference */
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .circles-1 {
-      top: -90%; /* Adjust this value to your preference */
-    }
-  }
 </style>
+

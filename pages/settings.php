@@ -40,7 +40,7 @@
         </h5>
       </div>
         <div class="col-3 text-end arrow-col">
-          <span class="arrow">></span>
+          <span class="arrow"></span>
         </div>
       </div>
     </div>

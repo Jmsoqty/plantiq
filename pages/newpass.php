@@ -34,7 +34,7 @@ if (isset($_SESSION['email'])) {
 
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/styles.css">
 
 </head>
 <style>

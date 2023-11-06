@@ -105,9 +105,14 @@
   <?php include '../pages/components/cover.php'; ?>
 
   <!-- TOP NAVBAR -->
-  <?php include '../pages/components/navbar.php'; ?>
+  <?php include '../pages/components/navbar-find.php'; ?>
 
+  
+ 
+           
+ 
 <div class="container mt-5">
+<<<<<<< HEAD
 <div class="card mb-3">
     <div class="row g-0">
         <div class="card col-md-4">
@@ -121,6 +126,14 @@
                     An onion is a round vegetable with a brown skin that grows underground. 
                     It has many white layers on its inside which have a strong, sharp smell and taste.
                 </p>
+=======
+  <h2 class="position-relative">Suggestions:</h2>
+  <div class="card">
+      <div class="card-body">
+          <div class="d-flex">
+            <div>
+              <img class="img-fluid img-responsive rounded-4" src="../assets/img/onion.jpg" alt="Garlic" style="width: 200px; height: 200px; object-fit: cover;">
+>>>>>>> 938023eaef297925c80e435eccac957735dd8fcf
             </div>
         </div>
     </div>

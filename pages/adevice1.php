@@ -27,10 +27,14 @@
 <body>
 
     <!-- CoverPhoto -->
+<<<<<<< HEAD
     <?php include '../pages/components/cover.php'; ?>
+=======
+  <?php include '../pages/components/cover.php'; ?>
+>>>>>>> 938023eaef297925c80e435eccac957735dd8fcf
 
     <!-- TOP NAVBAR -->
-    <?php include '../pages/components/navbar-top.php'; ?>
+    <?php include '../pages/components/navbar.php'; ?>
 
     <!-- START CONTENT -->
     <div class="container">

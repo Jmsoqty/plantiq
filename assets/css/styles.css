@@ -47,21 +47,33 @@ body{
   border-radius: 25px;
 }
 
-/* COVER PHOTO */
+/* Cover Photo */
 
-/* Media query for screens with a maximum width of 576px (Mobile) */
-@media (max-width: 576px) {
-  .circle {
-    top: -30%; /* Adjust the positioning as needed for mobile screens */
-    max-width: 100%;
+/* Media query for screens with a maximum width of 576px (Extra Small - xs) */
+@media (max-width: 575.98px) {
+  .custom-svg {
+    top: -18%;
   }
 }
 
-/* Media query for screens with a maximum width of 768px (Tablet) */
+/* Media query for screens with a minimum width of 576px (Small - sm) */
+@media (max-width: 576px) {
+  .custom-svg {
+    top: -25%;
+  }
+}
+
+/* Media query for screens with a minimum width of 768px (Medium - md) */
 @media (max-width: 768px) {
-  .circle {
-    top: -20%; /* Adjust the positioning as needed for Tablet screens */
-    max-width: 100%;
+  .custom-svg {
+    top: -25%;
+  }
+}
+
+/* Media query for screens with a minimum width of 992px (Large - lg) */
+@media (max-width: 992px) {
+  .custom-svg {
+    top: -80%;
   }
 }
 
@@ -341,3 +353,7 @@ div[role="progressbar"]::before {
   max-height: 100%;
   object-fit: cover;
 }
+.modal-dialog {
+  top: calc(75% - 300px); 
+}
+
