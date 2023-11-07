@@ -1,15 +1,13 @@
 <div class="container">
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
-      <div class="dropdown flex-grow-1">
-        
-      </div>
+      <div class="dropdown flex-grow-1"></div>
       <div class="input-group ms-1" style="width:350px;">
-  <input type="text" class="form-control input-text"  placeholder="Search for a plant" aria-label="Recipient's username" aria-describedby="basic-addon2">
-  <div class="input-group-append">
-    <button class="btn btn-outline-success btn-lg" type="button"><i class="fa fa-search"></i></button>
-  </div>
-</div>
+        <input type="text" class="form-control input-text"  placeholder="Search for a plant" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-success btn-lg" type="button"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
       <div class="dropdown">
       <a class="btn mt-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-bell fa-2xl navbtn"></i>

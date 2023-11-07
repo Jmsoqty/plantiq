@@ -81,4 +81,23 @@
                 alert("Event is undefined");
             }
         })
+        // Add notes button
+        $('#add-note').click(function() {
+            // Implement your logic for the "Add notes" button here
+        });
+
+        // Previous month button
+        $('#fc-prev-button').click(function() {
+            calendar.prev();
+        });
+
+        // Next month button
+        $('#fc-next-button').click(function() {
+            calendar.next();
+        });
+
+        // Today button
+        $('#fc-today-button').click(function() {
+            calendar.gotoDate(new Date()); // Navigate to today's date
+        });
     })

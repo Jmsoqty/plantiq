@@ -22,19 +22,61 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link rel="stylesheet" href="../assets/css/main.css">
 
-    <style>
+  <style scoped>
+
     .btn-info.text-light:hover,
     .btn-info.text-light:focus {
         background: #000;
     }
+
     table, tbody, td, tfoot, th, thead, tr {
       border-color: #ededed !important;
       border-style: solid;
       background: #fff;
       border-width: 1px !important;
     }
-    
-    </style>
+
+    .fc-daygrid-day-top{
+      text-align: center;
+    }
+
+    .fc-dayGridMonth-button, .fc-dayGridWeek-button, .fc-list-button{
+      display: none;
+    }
+
+    .fc-toolbar-chunk{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 10px;
+      
+    }
+
+    .fc .fc-daygrid-day.fc-day-today {
+      background-color: rgba(38, 219, 35, 0.15) !important; /* Change the background color and use !important */
+    }
+
+    .fc .fc-highlight{
+      background: rgba(38, 219, 35, 0.3);
+    }
+
+    /* For mobile screens (less than or equal to 768px width) */
+    @media (max-width: 768px) {
+      .fc-toolbar-chunk h2.fc-toolbar-title {
+        font-size: 16px !important; /* Adjust font size for mobile screens */
+        font-weight: bold;
+      }
+    }
+
+    /* For medium screens (greater than 768px width) */
+    @media (min-width: 769px) {
+      .fc-toolbar-chunk h2.fc-toolbar-title {
+        font-size: 22px !important; /* Adjust font size for medium screens */
+        font-weight: bold;
+      }
+    }
+
+  </style>
 
 </head>
 
@@ -50,186 +92,96 @@
   <?php include '../pages/components/navbar-home.php'; ?>
 
   <div class="container py-5" id="page-container">
-  <div class="mb-2" id="addBtn">
-  <button class="btn btn-primary ms-4" id="add-notes-button">Add notes</button>
-</div>
-    <div class="row">
-      <div class="col-md-9">
-        <div id="calendar"></div>
-      </div>
-      <div class="modal" id="schedule-form-modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog modal-md" role="document">
-    <div class="modal-content">
-    <div class="modal-header bg-gradient bg-primary text-light">
-    <h5 class="modal-title">Schedule Form</h5>
-    <button type="button" class="close btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-</div>
 
-      <div class="modal-body">
-        <form action="../php/save_schedule.php" method="post" id="schedule-form">
-          <input type="hidden" name="id" value="">
-          <div class="form-group mb-2">
-            <label for="title" class="control-label">Title</label>
-            <input type="text" class="form-control form-control-sm rounded-0" name="title" id="title" required>
-          </div>
-          <div class="form-group mb-2">
-            <label for="description" class="control-label">Description</label>
-            <textarea rows="3" class="form-control form-control-sm rounded-0" name="description" id="description" required></textarea>
-          </div>
-          <div class="form-group mb-2">
-            <label for="start_datetime" class="control-label">Start</label>
-            <input type="datetime-local" class="form-control form-control-sm rounded-0" name="start_datetime" id="start_datetime" required>
-          </div>
-          <div class="form-group mb-2">
-            <label for="end_datetime" class="control-label">End</label>
-            <input type="datetime-local" class="form-control form-control-sm rounded-0" name="end_datetime" id="end_datetime" required>
-          </div>
-          <div class="text-center">
-            <button class="btn btn-primary btn-sm rounded-0" type="submit"><i class="fa fa-save"></i> Save</button>
-           
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-note">
+        Add notes
+    </button>
 
-          </div>
-        </form>
-      </div>
-    </div>
+    <div class="mt-4" id="calendar"></div>
+
   </div>
-</div>
-
-
 
   <!-- BOTTOM NAVBAR -->
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
   <!-- Add Event Modal -->
-  <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="schedule-form">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-0">
-        <div class="modal-header rounded-0">
-          <h5 class="modal-title">Add Event</h5>
+  <div class="modal fade" id="add-note" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule Form</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body rounded-0">
-          <div class="container-fluid">
-            <form id="event-form">
-              <div class="mb-3">
-                <label for="event-title" class="form-label">Title</label>
-                <input type="text" class="form-control" id="event-title" name="title">
+        <form action="save_schedule.php" method="post" id="schedule-form">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" placeholder="Title" required>
+              <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 100px" required></textarea>
+              <label for="description">Description</label>
+            </div>
+            <div class="d-flex">
+              <div class="form-floating mb-3 w-50 me-1">
+                <input type="date" class="form-control" id="start_datetime" placeholder="Enter a date" required>
+                <label for="start_datetime">Starting Date</label>
               </div>
-              <div class="mb-3">
-                <label for="event-description" class="form-label">Description</label>
-                <textarea class="form-control" id="event-description" name="description"></textarea>
+              <div class="form-floating mb-3 w-50 ms-1">
+                <input type="date" class="form-control" id="end_datetime" placeholder="Enter a date">
+                <label for="end_datetime">Ending Date</label>
               </div>
-              <div class="mb-3">
-                <label for="event-start" class="form-label">Start Date and Time</label>
-                <input type="datetime-local" class="form-control" id="event-start" name="start_datetime">
-              </div>
-              <div class="mb-3">
-                <label for="event-end" class="form-label">End Date and Time</label>
-                <input type="datetime-local" class="form-control" id="event-end" name="end_datetime">
-              </div>
-            </form>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer rounded-0">
-          <div class="text-end">
-            <button type="button" class="btn btn-primary btn-sm rounded-0" id="save-event">Save</button>
-            <button id="cancel-button" class="btn btn-default border btn-sm rounded-0" type="button"><i class="fa fa-reset"></i> Close</button>
-
-          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save changes</button>
         </div>
       </div>
     </div>
   </div>
   <!-- Add Event Modal -->
 
-
   <!-- Event Details Modal -->
-  <div class="modal fade" tabindex="-1" data-bs-backdrop="static" id="event-details-modal">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content rounded-0">
-        <div class="modal-header rounded-0">
-          <h5 class="modal-title">Schedule Details</h5>
+  <div class="modal fade" id="add-note" tabindex="-1" aria-labelledby="edit-note" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule Details</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body rounded-0">
-          <div class="container-fluid">
-            <dl>
-              <dt class="text-muted">Title</dt>
-              <dd id="title" class="fw-bold fs-4"></dd>
-              <dt class="text-muted">Description</dt>
-              <dd id="description" class=""></dd>
-              <dt class="text-muted">Start</dt>
-              <dd id="start" class=""></dd>
-              <dt class="text-muted">End</dt>
-              <dd id="end" class=""></dd>
-            </dl>
+        <form action="save_schedule.php" method="post" id="schedule-form">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" placeholder="Title" required>
+              <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 100px" required></textarea>
+              <label for="description">Description</label>
+            </div>
+            <div class="d-flex">
+              <div class="form-floating mb-3 w-50 me-1">
+                <input type="date" class="form-control" id="start" placeholder="Enter a date" required>
+                <label for="start">Starting Date</label>
+              </div>
+              <div class="form-floating mb-3 w-50 ms-1">
+                <input type="date" class="form-control" id="end" placeholder="Enter a date">
+                <label for="end">Ending Date</label>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="modal-footer rounded-0">
-          <div class="text-end">
-            <button type="button" class="btn btn-primary btn-sm rounded-0" id="edit" data-id="">Edit</button>
-            <button type="button" class="btn btn-danger btn-sm rounded-0" id="delete" data-id="">Delete</button>
-            <button type="button" class="btn btn-secondary btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
-          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" id="edit" data-id="">Edit</button>
+          <button type="button" class="btn btn-sm btn-danger" id="delete" data-id="">Edit</button>
+          <button type="button" class="btn btn-dark btn-sm rounded-0" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Event Details Modal -->
-  <script>
-    
- // Function to open the modal
-function openModal() {
-  var modal = document.getElementById("schedule-form-modal");
-  modal.style.display = "block";
-}
 
-// Function to close the modal
-function closeModal() {
-  var modal = document.getElementById("schedule-form-modal");
-  modal.style.display = "none";
-}
-
-// Close the modal if the user clicks outside of it
-window.onclick = function(event) {
-  var modal = document.getElementById("schedule-form-modal");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
-// Close the modal when the close button is clicked
-var closeButton = document.querySelector("#schedule-form-modal .close");
-if (closeButton) {
-  closeButton.addEventListener("click", closeModal);
-}
-
-// Open the modal when the "Add Notes" button is clicked
-var addNotesButton = document.getElementById("add-notes-button");
-if (addNotesButton) {
-  addNotesButton.addEventListener("click", openModal);
-}
-</script>
-  <script>
-  // Add a new modal for entering schedule details (if not already added)
-
-  // Date click event
-  calendar.on('dateClick', function(info) {
-    // Open the add event modal
-    addEventModal.modal('show');
-
-    // Set the start date and time in the modal form
-    var startDateTime = info.date.toISOString().slice(0, 16);
-    addEventModal.find('#start_datetime').val(startDateTime);
-
-    // Reset the modal form on close
-    addEventModal.on('hidden.bs.modal', function () {
-        $('#event-form')[0].reset();
-    });
-  });
-
-  </script>
 
 <?php 
 $schedules = $conn->query("SELECT * FROM `schedule_list`");
