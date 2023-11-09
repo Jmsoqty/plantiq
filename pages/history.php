@@ -37,7 +37,7 @@
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
       <div class="dropdown flex-grow-1">
-        <button class="btn btn-outline-dark dropdown-toggle  ms-4" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-outline-dark dropdown-toggle  ms-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
           October 14, 2023 - November 4, 2023 
         </button>
         <ul class="dropdown-menu">

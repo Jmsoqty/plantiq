@@ -356,7 +356,7 @@ div[role="progressbar"]::before {
   object-fit: cover;
 }
 
-.modal-dialog {
+#add-note {
   top: calc(75% - 300px); 
 }
 

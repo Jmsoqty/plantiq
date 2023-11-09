@@ -111,7 +111,8 @@
  
            
  
-<div class="container mt-5">
+<div class="container mt-3">
+<h2 class="position-relative  ">Suggestions:</h2>
 <div class="card mb-3">
     <div class="row g-0">
         <div class="card col-md-4">
@@ -119,7 +120,6 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Recommend: </h5>
                 <h1>Cabbage</h1>
                 <p class="card-text">
                     An onion is a round vegetable with a brown skin that grows underground. 
@@ -137,7 +137,6 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Recommend:</h5>
                 <h1>Cabbage</h1>
                 <p class="card-text">
                     A cabbage is a round vegetable with a green leafy exterior. 
@@ -155,7 +154,6 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h5 class="card-title">Recommend:</h5>
                 <h1>Cabbage</h1>
                 <p class="card-text">
                     Garlic is a pungent bulb that is commonly used as a seasoning in various dishes.
