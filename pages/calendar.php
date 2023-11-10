@@ -19,8 +19,8 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/calendar.css">
 
   <style scoped>
 
@@ -105,45 +105,45 @@
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
   <!-- Add Event Modal -->
-<div class="modal fade" id="add-note" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-xl" id="add-note-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule Form</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <form action="save_schedule.php" method="post" id="schedule-form">
-        <div class="modal-body">
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="title" placeholder="Title" required>
-            <label for="title">Title</label>
-          </div>
-          <div class="form-floating mb-3">
-            <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 100px" required></textarea>
-            <label for="description">Description</label>
-          </div>
-          <div class="d-flex">
-            <div class="form-floating mb-3 w-50 me-1">
-              <input type="date" class="form-control" id="start_datetime" placeholder="Enter a date" required>
-              <label for="start_datetime">Starting Date</label>
-            </div>
-            <div class="form-floating mb-3 w-50 ms-1">
-              <input type="date" class="form-control" id="end_datetime" placeholder="Enter a date">
-              <label for="end_datetime">Ending Date</label>
-            </div>
-          </div>
+  <div class="modal fade" id="add-note" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Schedule Form</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </form>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-sm btn-primary" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save changes</button>
+        <form action="save_schedule.php" method="post" id="schedule-form">
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" placeholder="Title" required>
+              <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Leave a description here" id="description" style="height: 100px" required></textarea>
+              <label for="description">Description</label>
+            </div>
+            <div class="d-flex">
+              <div class="form-floating mb-3 w-50 me-1">
+                <input type="date" class="form-control" id="start_datetime" placeholder="Enter a date" required>
+                <label for="start_datetime">Starting Date</label>
+              </div>
+              <div class="form-floating mb-3 w-50 ms-1">
+                <input type="date" class="form-control" id="end_datetime" placeholder="Enter a date">
+                <label for="end_datetime">Ending Date</label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm btn-primary" type="submit" form="schedule-form"><i class="fa fa-save"></i> Save changes</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
   <!-- Add Event Modal -->
 
   <!-- Event Details Modal -->
-  <div class="modal fade" id="add-note" tabindex="-1" aria-labelledby="edit-note" aria-hidden="true">
+  <div class="modal fade" id="edit-note" tabindex="-1" aria-labelledby="edit-note" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
       <div class="modal-content">
         <div class="modal-header">
@@ -206,7 +206,7 @@ if(isset($conn)) $conn->close();
   <script src="../assets/js/jquery-3.7.1.min.js"></script>
   <script src="../assets/js/navbarmenu.js"></script>
   <script src="../assets/js/main.js"></script>
-  <script src="../assets/js/calendar.js"></script>
+  <script src="../assets/js/calendars.js"></script>
 
 
 </html>

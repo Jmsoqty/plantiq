@@ -27,7 +27,7 @@ include '../php/userconfig.php';
 
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 <body>
@@ -39,7 +39,7 @@ include '../php/userconfig.php';
 <br><br><br>
 <div class="container">
     <div class="justify-content-center d-flex" style="margin-top: 50px; margin-bottom: 50px;">
-        <h1>Forgot Password</h1>
+        <h2>Forgot Password</h2>
     </div>
     
     <form action="php/email_check.php" method="post" class="requires-validation" novalidate>

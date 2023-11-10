@@ -17,22 +17,24 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
-<style>
+
+<style scoped>
     #passwordMatch {
-        font-weight: bold;
+      font-weight: bold;
     }
 
     .match {
-        color: green;
+      color: green;
     }
 
     .no-match {
-        color: red;
+      color: red;
     }
 </style>
+
 <body>
 
   <!-- CoverPhoto -->
@@ -41,76 +43,41 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-back.php'; ?>
 
-<div class="container">
-  <div>
-    <h1 class="text-center">Change Password</h1>
-    <center><span style="color: gray;">Input your desire Password</span></center>
-  </div>
-    <form action="" onsubmit="return validateForm()" class="requires-validation" novalidate>
-      <div class="mb-3 mt-5 form-floating">
+  <div class="container">
+    <div class="text-center">
+      <h2>Change Password</h2>
+      <p class="text-muted">Input your desire Password</p>
 
-          <input type="password" id="newPassword" class="form-control form-control-lg" placeholder="New Password"  id="validationServer01" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"required>
-          <label for="validationServer01" class="form-label" style="color: gray;">Enter Password</label>
-        <div class="invalid-feedback mb-2">
-            Please provide atleast 8 characters.
+      <form action="" onsubmit="return validateForm()" class="requires-validation" novalidate>
+
+        <div class="form-floating my-4" style="position: relative;">
+          <input type="password" class="form-control form-control-lg rounded-4" id="newPassword" placeholder="New Password" fdprocessedid="s1ri14" maxlength="8" required>
+          <label for="newPassword">Enter Password</label>
+
+          <div class="invalid-feedback">
+            Please provide at least 8 characters.
+          </div>
+          <span class="toggle-password mt-1" id="newPassword"><i class="fa-regular fa-eye"></i></span>
+        </div>
+
+        <div class="form-floating mb-2 text-start" style="position: relative;">
+          <input type="password" class="form-control form-control-lg rounded-4" id="confirmPassword" placeholder="Confirm Password" fdprocessedid="s1ri14" maxlength="8" required>
+          <label for="confirmPassword">Confirm Password</label>
+          
+          <div>
+            <span id="passwordMatch"></span>
+          </div>
+          <span class="toggle-password mt-1" id="confirmPassword"><i class="fa-regular fa-eye"></i></span>
         </div>
         
-      </div>
-
-      <div class="mb-2 form-floating">
-          <input type="password" id="confirmPassword" class="form-control form-control-lg" placeholder="Confirm Password" id="validationCustom02" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"required>
-          <label for="validationServer02" class="form-label" style="color: gray;">Confirm Password</label>
-          <span id="passwordMatch"></span>
-      </div>
-
-      <div class="justify-content-center d-flex">
-          <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="submit" style="box-shadow: -4px 4px #3FAA3D;">Change Password</button>
-      </div>    
-    </form>
-</div>
+        <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill text-center" type="submit" style="box-shadow: -4px 4px #3FAA3D;">Change Password</button>
+        
+      </form>
+    </div>
+  </div>
 
 <script>
-(function () {
-  'use strict';
-  const forms = document.querySelectorAll('.requires-validation');
-  Array.from(forms).forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
 
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
-</script>
-
-<script>
-        const newPasswordInput = document.getElementById("newPassword");
-        const confirmPasswordInput = document.getElementById("confirmPassword");
-        const passwordMatchLabel = document.getElementById("passwordMatch");
-
-        function validatePassword() {
-            const newPassword = newPasswordInput.value;
-            const confirmPassword = confirmPasswordInput.value;
-
-            if (newPassword !== confirmPassword) {
-                passwordMatchLabel.classList.remove("match");
-                passwordMatchLabel.classList.add("no-match");
-                passwordMatchLabel.textContent = "Passwords do not match";
-            } else {
-                passwordMatchLabel.classList.remove("no-match");
-                passwordMatchLabel.classList.add("match");
-                passwordMatchLabel.textContent = "Passwords match";
-            }
-        }
-
-        newPasswordInput.addEventListener("input", validatePassword);
-        confirmPasswordInput.addEventListener("input", validatePassword);
-</script>
-
-<script>
 (function () {
   'use strict';
   const forms = document.querySelectorAll('.requires-validation');
@@ -126,7 +93,30 @@
   });
 })();
 
+const newPasswordInput = document.getElementById("newPassword");
+const confirmPasswordInput = document.getElementById("confirmPassword");
+const passwordMatchLabel = document.getElementById("passwordMatch");
+
+function validatePassword() {
+  const newPassword = newPasswordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  if (newPassword !== confirmPassword) {
+    passwordMatchLabel.classList.remove("match");
+    passwordMatchLabel.classList.add("no-match");
+    passwordMatchLabel.textContent = "Passwords do not match";
+  } else {
+    passwordMatchLabel.classList.remove("no-match");
+    passwordMatchLabel.classList.add("match");
+    passwordMatchLabel.textContent = "Passwords match";
+  }
+}
+
+newPasswordInput.addEventListener("input", validatePassword);
+confirmPasswordInput.addEventListener("input", validatePassword);
+
 </script>
+
 <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>
 

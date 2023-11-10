@@ -17,86 +17,26 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
-<style>
 
-  .card{
-    border-radius: 20px;
-  }
-
-  @media (max-width: 576px) {
-    .card img {
-      max-width: none; /* Prevent image from shrinking on mobile */
-      height: 230px; /* Keep the fixed height */
-    }
-    .description {
-      font-size: 8px; /* Adjust this value to your preference */
-    }
-    .type{
-      font-size: 30px;
-    }
-  }
-
-  @media (min-width: 577px) and (max-width: 767px) {
-    .card img {
-      max-width: none; /* Prevent image from shrinking on mobile */
-      height: 230px; /* Keep the fixed height */
-    }
-    .description {
-      font-size: 8px; /* Adjust this value to your preference */
-    }
-    .type{
-      font-size: 30px;
-    }
-  }
-
-  @media (max-width: 768px) and (max-width: 991px) {
-    .card img {
-      max-width: none; /* Prevent image from shrinking on mobile */
-      height: 200px; /* Keep the fixed height */
-    }
-    .description {
-      font-size: 20px; /* Adjust this value to your preference */
-    }
-    .type{
-      font-size: 35px;
-    }
-  }
-
-  @media (max-width: 992px) and (max-width: 1023px) {
-    .card img {
-      max-width: none; /* Prevent image from shrinking on mobile */
-      height: 200px; /* Keep the fixed height */
-    }
-    .description {
-      font-size: 20px; /* Adjust this value to your preference */
-    }
-    .type{
-      font-size: 45px;
-    }
-  }
-
-  @media (max-width: 1024) and (max-width: 1200px) {
-    .card img {
-      max-width: none; /* Prevent image from shrinking on mobile */
-      height: 200px; /* Keep the fixed height */
-    }
-    .description {
-      font-size: 20px; /* Adjust this value to your preference */
-    }
-    .type{
-      font-size: 45px;
-    }
-  }
+<style scoped>
 
   .card img {
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    height: 200px; /* Adjust this value to your preference */
+    height: 100%; /* Adjust this value to your preference */
   }
+
+  /* Media query for tablet and mobile screens */
+  @media (max-width: 768px) {
+    .card-body {
+      font-size: 12px; /* Adjust the font size as needed */
+    }
+  }
+
 </style>
 
 <body>
@@ -106,64 +46,79 @@
 
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-find.php'; ?>
+   
+  <div class="container mt-3">
+    <h2 class="position-relative">Suggestions:</h2>
 
-  
- 
-           
- 
-<div class="container mt-3">
-<h2 class="position-relative  ">Suggestions:</h2>
-<div class="card mb-3">
-    <div class="row g-0">
-        <div class="card col-md-4">
-            <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="Garlic">
+    <div class="card my-3 rounded-4 border border-success">
+      <div class="row g-0">
+        <div class="col-5">
+          <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
         </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h1>Cabbage</h1>
-                <p class="card-text">
-                    An onion is a round vegetable with a brown skin that grows underground. 
-                    It has many white layers on its inside which have a strong, sharp smell and taste.
-                </p>
-            </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4>Onions</h4>
+            <p>
+              An onion is a round vegetable with a brown skin that grows underground. 
+              It has many white layers on its inside which have a strong, sharp smell and taste.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<br>
-<div class="card mb-3">
-    <div class="row g-0">
-        <div class="card col-md-4">
-            <img class="img-fluid rounded-4" src="../assets/img/cabbage.jpg" alt="Cabbage">
+
+    <div class="card my-3 rounded-4 border border-success">
+      <div class="row g-0">
+        <div class="col-5">
+          <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
         </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h1>Cabbage</h1>
-                <p class="card-text">
-                    A cabbage is a round vegetable with a green leafy exterior. 
-                    It is commonly used in salads and various dishes.
-                </p>
-            </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4>Onions</h4>
+            <p>
+              An onion is a round vegetable with a brown skin that grows underground. 
+              It has many white layers on its inside which have a strong, sharp smell and taste.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<br>
-<div class="card mb-3">
-    <div class="row g-0">
-        <div class="card col-md-4">
-            <img class="img-fluid rounded-4" src="../assets/img/garlic.jpg" alt="Garlic">
+
+    <div class="card my-3 rounded-4 border border-success">
+      <div class="row g-0">
+        <div class="col-5">
+          <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
         </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h1>Cabbage</h1>
-                <p class="card-text">
-                    Garlic is a pungent bulb that is commonly used as a seasoning in various dishes.
-                    It adds a distinct flavor and aroma to food.
-                </p>
-            </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4>Onions</h4>
+            <p>
+              An onion is a round vegetable with a brown skin that grows underground. 
+              It has many white layers on its inside which have a strong, sharp smell and taste.
+            </p>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-</div>
+
+    <div class="card my-3 rounded-4 border border-success">
+      <div class="row g-0">
+        <div class="col-5">
+          <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
+        </div>
+        <div class="col-7">
+          <div class="card-body">
+            <h4>Onions</h4>
+            <p>
+              An onion is a round vegetable with a brown skin that grows underground. 
+              It has many white layers on its inside which have a strong, sharp smell and taste.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
 <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>

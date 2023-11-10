@@ -17,7 +17,7 @@
   
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 <body>
@@ -28,26 +28,27 @@
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-back.php'; ?>
 
+  <div class="container">
+    <div class="text-center">
+      <h2>Change Username</h2>
+      <p class="text-muted">Input your new desire Username</p>
 
-<div class="container">
-  <div>
-      <h1 class="justify-content-center d-flex">Change Username</h1>
-      <center><span style="color: gray;">Input your new desire Username</span></center>
-  </div>
-  <form action="" class="requires-validation" novalidate>
-    <div class=" mb-4 mt-5 form-floating">
-        <input type="text" id="textInput" class="form-control form-control-lg" id="validationServer01" placeholder="Annabelle Roxas" style="border-radius: 10px;" fdprocessedid="s1ri14" autocomplete="off" maxlength="20" required>
-        <label for="textInput" class="form-label" style="color: gray;">Annabelle Roxas</label>
-      <div class="invalid-feedback">
-      </div>
-      <span id="validationMessage" style="color: red;"></span>
+      <form action="" class="requires-validation" novalidate>
 
+        <div class="form-floating my-4 text-start" style="position: relative;">
+          <input type="text" class="form-control form-control-lg rounded-4" id="newUser" placeholder="New Username" required>
+          <label for="newUser">Annabelle Roxas</label>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <span class="text-danger" id="validationMessage"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold" style="box-shadow: -4px 4px #3FAA3D;">Change Username</button>
+						
+      </form>
     </div>
-    <div class="justify-content-center d-flex">
-        <button class="btn btn-lg btn-primary fw-bold m-5 rounded-pill" type="submit" style="box-shadow: -4px 4px #3FAA3D;">Change Username</button>
-    </div>    
-  </form>
-</div>
+  </div>
 
 <script>
 (function () {
@@ -65,27 +66,24 @@
   });
 })();
 
+const newUser = document.getElementById("newUser");
+const validationMessage = document.getElementById("validationMessage");
+
+function validateInput() {
+    const inputValue = newUser.value;
+
+    // Regular expression to allow only alphanumeric characters and spaces
+    const regex = /^[a-zA-Z0-9\s]+$/;
+
+    if (!regex.test(inputValue)) {
+        validationMessage.textContent = "Special characters are not allowed.";
+    } else {
+        validationMessage.textContent = "";
+    }
+}
+
+newUser.addEventListener("input", validateInput);
 </script>
-
-<script>
-        const textInput = document.getElementById("textInput");
-        const validationMessage = document.getElementById("validationMessage");
-
-        function validateInput() {
-            const inputValue = textInput.value;
-
-            // Regular expression to allow only alphanumeric characters and spaces
-            const regex = /^[a-zA-Z0-9\s]+$/;
-
-            if (!regex.test(inputValue)) {
-                validationMessage.textContent = "Special characters are not allowed.";
-            } else {
-                validationMessage.textContent = "";
-            }
-        }
-
-        textInput.addEventListener("input", validateInput);
-    </script>
 
 <!-- BOTTOM NAVBAR -->
 <?php include '../pages/components/navbar-bottom.php'; ?>

@@ -34,9 +34,6 @@ include './php/userconfig.php';
 </head>
 <body>
 
-
-  
-
 <form class="requires-validation" novalidate>
   <section class="vh-100">
     <div class="container py-5 h-100">
@@ -52,25 +49,25 @@ include './php/userconfig.php';
               <input type="text" class="form-control rounded-4" id="floatingInput" placeholder="Username" required>
               <label for="validationServer01" class="form-label">Username</label>
               <div class="valid-feedback">
-                Looks good!
+                Username is recognized
               </div>
               <div class="invalid-feedback">
-                Not look good!
+                Username is not recognized
               </div>
             </div>
 
-            <div class="form-floating mb-3 text-start rounded-4">
+            <div class="form-floating mb-3 text-start rounded-4" style="position: relative;">
               <input type="password" class="form-control rounded-4" id="floatingPassword" placeholder="Password" required>
               <label for="floatingPassword">Password</label>
-              <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
+
               <div class="valid-feedback">
                 Looks good!
               </div>
               <div class="invalid-feedback">
-                Not look good!
+                Password is not recognized
               </div>
+              <span class="toggle-password mt-1" id="togglePassword"><i class="fa-regular fa-eye"></i></span>
             </div>
-
 
             <div class="my-3 d-flex justify-content-between">
               <label>
@@ -79,8 +76,7 @@ include './php/userconfig.php';
               <a href="pages/forgotpass.php" class="text-decoration-none text-secondary">Forgot password?</a>
             </div>
 
-            <!-- <button type="submit" class="btn btn-lg" style="background-color: #26DB23; color: #ffffff;" >Log In</button> -->
-            <a href="./pages/home.php" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50 mt-5" style="box-shadow: -4px 4px #3FAA3D;">Login</a>
+            <button type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50 mt-5" style="box-shadow: -4px 4px #3FAA3D;">Log In</button>
 
             <h5 class="text-center">or</h5>
              
@@ -89,6 +85,7 @@ include './php/userconfig.php';
                 <img src="./assets/img/google.png" alt="Google Logo" style="width: 30px; height: 30px; margin-right: 5px; "> Continue with Google
               </button>
             </div>
+            
             <div class="d-flex justify-content-around mt-3">
               <a class="text-decoration-none text-dark">Don't have Account?</a>
               <a class="text-decoration-none text-primary" href="pages/register.php">Create Account</a>
@@ -107,6 +104,7 @@ include './php/userconfig.php';
 <script src="./assets/js/script.js"></script>
 
 <script>
+
 if (window.performance && performance.navigation.type === 1) {
   window.location.href = "index.php";
   }
@@ -125,6 +123,20 @@ if (window.performance && performance.navigation.type === 1) {
     }, false);
   });
 })();
+
+const passwordInput = document.getElementById('floatingPassword');
+const togglePassword = document.getElementById('togglePassword');
+
+togglePassword.addEventListener('click', () => {
+  if (passwordInput.type === 'password') {
+    passwordInput.type = 'text';
+    togglePassword.innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
+  } else {
+    passwordInput.type = 'password';
+    togglePassword.innerHTML = '<i class="fa-regular fa-eye"></i>';
+  }
+});
+
 </script>
 
 </body>

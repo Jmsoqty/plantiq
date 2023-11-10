@@ -8,44 +8,35 @@ body{
   background-color: #EEEEEE;
 }
 
-.form-floating.position-relative {
-  display: flex;
-  align-items: center;
+#remember {
+  color: #26DB23; /* Change to your desired color */
 }
 
-.form-control {
-  flex: 1;
-  border-radius: 0;
-}
+/* Input's w/ Passwords */
 
-.fa-eye {
+.toggle-password {
   position: absolute;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
+  right: 10px;
   cursor: pointer;
 }
 
-/* Adjust the padding for the form control to accommodate the icon */
-.form-control {
-  padding-right: 30px; /* Adjust as needed */
+/* Forgot Password */
+
+#passwordMatch {
+  font-weight: bold;
 }
 
-.boxy {
-  display: flex;
-  background: white;
-  padding: 10px;
-  color: #333;
-  height: 180px;
-  border-radius: 25px;
-  margin: auto;
+.match {
+  color: green;
 }
 
-.boxy img {
-  width: auto;
-  height: 100%;
-  border-radius: 25px;
+.no-match {
+  color: red;
 }
+
+/* END Change Password */
 
 /* Cover Photo */
 
@@ -106,6 +97,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px; /* roundness of the scroll thumb */
   border: 1px solid rgb(218, 218, 218); /* creates padding around scroll thumb */
 }
+
+/* HOME */
 
 /* CONTAINER 1 */
 
@@ -183,57 +176,43 @@ div[role="progressbar"]::before {
   height: auto;
   transition: opacity 0.3s; /* Add a transition for opacity */
 }
-/* Add Font Awesome styles (assuming you're using Font Awesome icons) */
-.fa-pencil-alt::before {
-  font-family: 'Font Awesome 5 Free';
-  content: "\f303"; /* Unicode for the pencil icon */
-  margin-right: 10px; /* Adjust spacing between icon and text */
-}
 
-.modal-dialog {
+/* Modal Customized Cards */
+
+.card-custom img {
   max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  height: 100%; /* Adjust this value to your preference */
 }
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 80%;
+/* Media query for tablet and mobile screens */
+@media (max-width: 768px) {
+  .card-body-custom {
+    font-size: 12px; /* Adjust the font size as needed */
   }
 }
 
-@media (min-width: 768px) {
-  .modal-dialog {
-    max-width: 60%;
-  }
+/* END HOME */
+
+
+/* FIND PLANTS */
+
+/* Find Plants & Home */
+.fa-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  cursor: pointer;
 }
 
-@media (min-width: 992px) {
-  .modal-dialog {
-    max-width: 50%;
-  }
-}
-.status-container {
-  display: flex;
-  align-items: center;
-}
+/* END FIND PLANTS */
 
-.circle {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: green;
-  margin-right: 5px; /* Adjust the margin as needed */
-}
-.circles {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: red;
-  margin-right: 5px; /* Adjust the margin as needed */
-}
 
-/* Swiper CSS */
+/* PROFILE */
+
+/* Profile Swiper CSS */
 
 .slide-content {
   margin: 0;
@@ -284,8 +263,8 @@ div[role="progressbar"]::before {
 .overlay span, .overlay button {
   margin-top: 10px;
 }
-.inner-div,
-#btn-plant{
+
+.inner-div, #btn-plant{
   position:absolute;
   top: 50%;
   left: 50%;
@@ -293,27 +272,43 @@ div[role="progressbar"]::before {
   color: white;
   width: 80%;
 }
+
 #span-date{
   color: #ffffff;
   font-size: 11px;
 }
+
+.swiper-navBtn{
+  color: #428339;
+  transition: color 0.3s ease;
+}
+
+.swiper-navBtn:hover{
+  color: #26DB23;
+}
+
 .swiper-navBtn::before,
 .swiper-navBtn::after{
   font-size: 35px;
 }
+
 .swiper-button-next{
   right: 0;
 }
+
 .swiper-button-prev{
   left: 0;
 }
+
 .swiper-pagination-bullet{
-  background-color: #6E93f7;
+  background-color: #428339;
   opacity: 1;
 }
+
 .swiper-pagination-bullet-active{
-  background-color: #4070F4;
+  background-color: #26DB23;
 }
+
 @media screen and (max-width: 768px) {
   .slide-content{
     margin: 0 10px;
@@ -356,7 +351,4 @@ div[role="progressbar"]::before {
   object-fit: cover;
 }
 
-#add-note {
-  top: calc(75% - 300px); 
-}
-
+/* END PROFILE */

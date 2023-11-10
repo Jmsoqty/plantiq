@@ -18,9 +18,10 @@
 
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
+
 <body>
 
   <!-- CoverPhoto -->
@@ -28,15 +29,14 @@
 
   <!-- TOP NAVBAR -->
   <?php include '../pages/components/navbar-top.php'; ?>
-  <div class="status-container">
-  <h6 class="active-status mt-2 ms-2 position-relative">
-    Status:  Connected <span class="circle"></span>
+
+  <h6 class="mt-2 ms-2 position-relative">
+    Status:  Connected <i class="fa-solid fa-circle text-success"></i>
   </h6>
-</div>
 
   <div class="container">
   
-    <!-- Column 1 -->
+    <!-- COLUMN 1 CONTENT -->
     <div class="container pt-3">
       <div class="card border-0 rounded-4">
         <div class="card-body">
@@ -44,8 +44,7 @@
             <div class="col-6">
               <h5 class="text-center">Planted For</h5>
               <h2 class="text-center text-primary">19 Days</h2>
-              <p class="text-center text-secondary">Your plant has exceeded the transfer date by 2 days
-                transfer now</p>
+              <p class="text-center text-secondary">Your plant has exceeded the transfer date by 2 days transfer now</p>
             </div>
             <div class="col-6 d-flex justify-content-center align-items-center">
               <div role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="--value:65"></div>
@@ -56,14 +55,15 @@
     </div>
 
     <br><br>
-    <!--COLUMN 2 CONTENT -->
+
+    <!-- COLUMN 2 CONTENT -->
     <div class="container mb-5">
       <div class="card border-success rounded-4">
         <div class="card-body">
           <div class="d-flex justify-content-between mb-4">
             <h5 class="card-title fw-bolder">Device 1</h5>
             <a href="../pages/calendar.php" class="">
-              <i class="fa-solid fa-ellipsis fa-2xl text-dark"></i>
+              <i class="fa-solid fa-ellipsis fa-xl text-dark"></i>
             </a>
           </div>
 
@@ -84,17 +84,13 @@
           </div>
 
           <div class="dropdown-center text-end">
-            <!--Size dropdown menu-->
             <select id="size_select" class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown">
               <option value="option1">PLANT 2</option>
               <option value="option2">PLANT 4</option>
               <option value="option3">PLANT 6</option>
               <option value="option4">PLANT 8</option>
-
             </select>
           </div>
-
-
 
           <!-- 2 PLANTS -->
           <div class="container rounded mt-3" style="background-color: #EEEEEE;">
@@ -104,22 +100,20 @@
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
                   </div>
-
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -132,7 +126,7 @@
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -140,7 +134,7 @@
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -151,7 +145,7 @@
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/tomato.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -159,14 +153,13 @@
                   <div class="col-6">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/onion.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
                   </div>
-
-
                 </div>
+
               </div>
             </div>
           </div>
@@ -179,7 +172,7 @@
                   <div class="col-4">
                     <div class="image-container mb-3">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -187,7 +180,7 @@
                   <div class="col-4">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -195,7 +188,7 @@
                   <div class="col-4">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -203,7 +196,7 @@
                   <div class="col-4">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -211,7 +204,7 @@
                   <div class="col-4">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -219,7 +212,7 @@
                   <div class="col-4">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -237,7 +230,7 @@
                   <div class="col-3">
                     <div class="image-container mb-3">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -245,7 +238,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -253,7 +246,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -261,7 +254,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/pechay.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -269,7 +262,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -277,7 +270,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -285,7 +278,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -293,7 +286,7 @@
                   <div class="col-3">
                     <div class="image-container">
                       <button type="button" class="btn plus-button position-absolute" data-bs-toggle="modal" data-bs-target="#modal1">
-                        <i class="fa-regular fa-square-plus fa-2xl"></i>
+                        <i class="fa-regular fa-square-plus fa-xl"></i>
                       </button>
                       <img src="../assets/img/sili.png" id="plantbox" class="img-fluid rounded-4">
                     </div>
@@ -302,11 +295,14 @@
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
-      <br><br>
-
     </div>
+
+    <br><br>
+
   </div>
 
 
@@ -337,8 +333,9 @@
 
     });
   </script>
+
   <script>
-    // Function to edit the content of the boxy
+    // Function to edit the content of the editpic
     function editElement() {
       // Allow editing by removing the "contenteditable" attribute
       document.querySelectorAll('[contenteditable="true"]').forEach(function(el) {
@@ -346,18 +343,17 @@
       });
     }
 
-    // Function to delete the boxy
+    // Function to delete the editpic
     function deleteElement() {
-      // Remove the entire .boxy element
-      const boxy = document.querySelector(".boxy");
-      if (boxy) {
-        boxy.remove();
+      // Remove the entire #editpic element
+      const editpic = document.querySelector(".edit-pic");
+      if (editpic) {
+        editpic.remove();
       }
     }
   </script>
 
 </body>
-
 </html>
 
 <!-- Modal -->
@@ -369,91 +365,93 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <!-- FIRST LAYER -->
-        <div class="boxy">
-          <div class="me-2">
-            <img class="img" src="../assets/img/pechay.png" class="img-responsive" contenteditable="true">
-          </div>
-
-          <div class="text">
-            <h3 class="headline" contenteditable="true">Pechay Plant</h3>
-            <div class="dropdown">
-              <!-- Size dropdown menu -->
-              <select id="size_select" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" style="border: 2px solid;" contenteditable="true">
-                <option value="option1" contenteditable="true">Alive</option>
-                <option value="option2" contenteditable="true">Dead</option>
-              </select>
+        <div class="card my-3 rounded-4 border border-light">
+          <div class="row g-0">
+            <div class="col-5 border-0">
+              <img class="img-fluid rounded-4 edit-pic" src="../assets/img/pechay.png">
             </div>
-
-            <!-- Edit and Delete Buttons with Bootstrap Styling -->
-            <div class="mt-4">
-              <button class="btn btn-primary" onclick="editElement()">Edit</button>
-              <button class="btn btn-danger" onclick="deleteElement()">Remove</button>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <!-- Search Layer  -->
-          <div class="p-1 rounded rounded-pill shadow-sm mb-4" style="border: 2px solid;">
-            <div class="input-group">
-              <input type="search" placeholder="Search for Plant" aria-describedby="button-addon1" class="form-control  rounded-pill">
-              <div class="input-group-append">
-                <button id="button-addon1" type="submit" class="btn"><i class="fa fa-search"></i></button>
+            <div class="col-7">
+              <div class="card-body">
+                <h5 contenteditable="true">Pechay Plant</h5>
+                <select class="form-select form-control-sm border border-dark">
+                  <option disabled selected>Select plant Status</option>
+                  <option class="text-primary fw-semibold" value="">Alive</option>
+                  <option class="text-danger fw-semibold" value="">Dead</option>
+                </select>
+                <div class="mt-4">
+                  <button class="btn btn-primary" onclick="editElement()">Edit</button>
+                  <button class="btn btn-danger" onclick="deleteElement()">Remove</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div>
-          <h4>Recommended Plants</h4>
+        <hr>
+        
+        <div class="position-relative my-3">
+          <input type="text" class="form-control rounded-pill border border-success" placeholder="Search for a plant">
+          <a href="#" id="search" class="search-button">
+            <span class="fa fa-search text-dark me-1"></span>
+          </a>
         </div>
 
-        <!-- Recoomended 1st Layer -->
-        <div class="boxy mt-3" style="border: 2px solid;">
-          <div class="me-2">
-            <img class="img" src="../assets/img/sili.png" class="img-responsive">
-          </div>
+        <h4>Recommended Plants</h4>
 
-            <div class="text">
-            <h6 class="headline">Red Chili Peppers</h6>
-            <h6 class="sub">7-10 Days</h6>
-
-            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
-          </div>
-        </div>
-
-        <!-- Recoomended 2nd Layer -->
-        <div class="boxy mt-3" style="border: 2px solid;">
-          <div class="me-2">
-            <img class="img" src="../assets/img/pechay.png" class="img-responsive">
-          </div>
-
-          <div class="text">
-            <h6 class="headline">Red Chili Peppers</h6>
-            <h6 class="sub">7-10 Days</h6>
-
-            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
+        <div class="card card-custom my-3 rounded-4 border border-success">
+          <div class="row g-0">
+            <div class="col-5">
+              <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
+            </div>
+            <div class="col-7">
+              <div class="card-body card-body-custom">
+                <h5>Onions</h5>
+                <p>
+                  An onion is a round vegetable with a brown skin that grows underground. 
+                  It has many white layers on its inside which have a strong, sharp smell and taste.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Recoomended 3rd Layer -->
-        <div class="boxy mt-3" style="border: 2px solid;">
-          <div class="me-2">
-            <img class="img" src="../assets/img/onion.png" class="img-responsive">
-          </div>
-
-          <div class="text">
-            <h6 class="headline">Red Chili Peppers</h6>
-            <h6 class="sub">7-10 Days</h6>
-
-            <h6 class="sub">Start the seeds indoors in a small punnet or pot in October/November and transplant outdoors only when weather is consistently warm – usually early December.</h6>
+        <div class="card card-custom my-3 rounded-4 border border-success">
+          <div class="row g-0">
+            <div class="col-5">
+              <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
+            </div>
+            <div class="col-7">
+              <div class="card-body card-body-custom">
+                <h5>Onions</h5>
+                <p>
+                  An onion is a round vegetable with a brown skin that grows underground. 
+                  It has many white layers on its inside which have a strong, sharp smell and taste.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        ...
+
+        <div class="card card-custom my-3 rounded-4 border border-success">
+          <div class="row g-0">
+            <div class="col-5">
+              <img class="img-fluid rounded-4" src="../assets/img/onion.jpg" alt="">
+            </div>
+            <div class="col-7">
+              <div class="card-body card-body-custom">
+                <h5>Onions</h5>
+                <p>
+                  An onion is a round vegetable with a brown skin that grows underground. 
+                  It has many white layers on its inside which have a strong, sharp smell and taste.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>

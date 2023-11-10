@@ -1,58 +1,32 @@
 <style>
-  /* Styles for wrapping the search box */
 
-.main {
-    width: 50%;
-    margin: 50px auto;
-}
+  .fa-search {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  }
 
-/* Bootstrap 5 text input with search icon */
+</style>
 
-.has-search .form-control {
-    padding-left: 2.375rem;
-}
-
-.has-search .form-control-feedback {
-    position: absolute;
-    z-index: 2;
-    display: block;
-    width: 2.375rem;
-    height: 2.375rem;
-    line-height: 2.375rem;
-    text-align: center;
-    pointer-events: none;
-    color: #aaa;
-    
-}
-.form-group.has-search {
-        position: relative;
-    }
-
-    .form-group.has-search .form-control {
-        padding-left: 35px; /* Adjust the padding as needed */
-        border-radius: 20px; /* Adjust the radius as needed */
-    }
-#search{
-  color: green;
-}
-  
-  </style>
 <div class="container">
   <div class="top" style="padding-top: 50px;">
     <div class="d-flex flex-row">
       <div class="dropdown flex-grow-1">
-      <div class="form-group has-search mt-2">
-<span class="fa fa-search form-control-feedback" id="search" ></span>
-<input type="text" class="form-control" placeholder="Search for a plant">
-</div>
+        <div class="position-relative mt-2">
+          <input type="text" class="form-control rounded-pill border border-success" placeholder="Search for a plant">
+          <a href="#" id="search" class="search-button">
+            <span class="fa fa-search text-dark me-1"></span>
+          </a>
+        </div>
       </div>
 
       <div class="dropdown">
-      <a class="btn mt-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-bell navbtn"></i>
-            <span class="position-absolute top-21 start-51 translate-middle p-2 bg-danger border border-light rounded-circle">
-                <span class="visually-hidden">New alerts</span>
-            </span>
+        <a class="btn mt-2 position-relative" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-bell navbtn"></i>
+          <span class="position-absolute top-21 start-51 translate-middle p-2 bg-danger border border-light rounded-circle">
+            <span class="visually-hidden">New alerts</span>
+          </span>
         </a>
         <ul class="dropdown-menu">
           <div class="container" style="width: 25rem;">

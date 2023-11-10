@@ -20,72 +20,81 @@
 
     <!-- Main Template -->
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
 <body>
 
-    <!-- CoverPhoto -->
-<<<<<<< HEAD
-    <?php include '../pages/components/cover.php'; ?>
-=======
-  <?php include '../pages/components/cover.php'; ?>
->>>>>>> 938023eaef297925c80e435eccac957735dd8fcf
+	<!-- CoverPhoto -->
+	<?php include '../pages/components/cover.php'; ?>
 
-    <!-- TOP NAVBAR -->
-    <?php include '../pages/components/navbar.php'; ?>
+	<!-- TOP NAVBAR -->
+	<?php include '../pages/components/navbar.php'; ?>
 
-    <!-- START CONTENT -->
-    <div class="container">
-        <h1 class="text-center">Add Device</h1>
-        <h6 class="text-center text-muted mb-4">input all the necessarry Info in your Device</h6>
+	<!-- START CONTENT -->
+	<form class="requires-validation" novalidate>
+		<div class="container text-center">
+			<h2 class="fw-semibold">Add Device</h2>
+			<label class="text-muted mb-4">Input all the necessarry info in your Device</label>
 
-        <div class="card shadow mx-auto" style="max-width: 500px; border-radius:25px;">
-            <div class="card-body">
-                <div>
+			<div class="card shadow mx-auto" style="max-width: 500px; border-radius:25px;">
+				<div class="card-body">
+			
+					<div class="form-floating mb-3 text-start">
+						<input type="text" class="form-control rounded" id="floatingInput" placeholder="Name of Device" required>
+						<label for="validationServer01" class="form-label">Name of Device</label>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						<div class="invalid-feedback">
+							Not looks good!
+						</div>
+					</div>
 
-                    <div class="input">
-                        <input type="text" class="form-control form-control-lg mb-2" placeholder="Name of Device"
-                            required>
-                        <input type="text" class="datepicker form-control form-control-lg" placeholder="Date Planted"
-                            required>
-                        <textarea class="form-control form-control-lg mt-2" id="" cols="57" rows="5"
-                            placeholder="Plants in this Device"></textarea>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="adevice1.php">
-                        <button class="btn btn-success btn-lg mt-3" style="background-color: #26DB23;">Add
-                            Device</button>
-                    </a>
-                </div>
-            </div>
-        </div>
+					<div class="form-floating mb-3 text-start">
+						<input type="date" class="form-control rounded" id="floatingInput" placeholder="Starting Date of Plant" required>
+						<label for="validationServer01" class="form-label">Starting Date of Plant</label>
+						<div class="valid-feedback">
+							Looks good!
+						</div>
+						<div class="invalid-feedback">
+							Choose a date!
+						</div>
+					</div>
 
-    </div>
+					<button type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50" style="box-shadow: -4px 4px #3FAA3D;">Add Device</button>
+							
+				</div>
+			</div>
+		</div>
+	</form>
 
-    <!-- BOTTOM NAVBAR -->
-    <?php include '../pages/components/navbar-bottom.php'; ?>
+	<!-- BOTTOM NAVBAR -->
+	<?php include '../pages/components/navbar-bottom.php'; ?>
 
-    <script src="../assets/js/bootstrap.bundle.js"></script>
-    <script src="../assets/js/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/navbarmenu.js"></script>
+	<script>
+	(function () {
+  'use strict';
+  const forms = document.querySelectorAll('.requires-validation');
+  Array.from(forms).forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+      form.classList.add('was-validated');
+    }, false);
+  });
+	})();
+	</script>
 
-    <script>
-    $(document).ready(function() {
-        $('.datepicker').datepicker({
-            format: 'mm/dd/yyyy', // Customize the date format as needed
-            todayHighlight: true,
-            autoclose: true
-        });
-    });
-    </script>
+	<script src="../assets/js/bootstrap.bundle.js"></script>
+	<script src="../assets/js/jquery-3.7.1.min.js"></script>
+	<script src="../assets/js/navbarmenu.js"></script>
 
 </body>
-
 </html>
 
 <!-- Modal -->
