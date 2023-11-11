@@ -59,10 +59,10 @@ if (isset($_SESSION['email'])) {
     <div class="justify-content-center d-flex" style="margin-top: 50px; margin-bottom: 50px;">
         <h1>Forgot Password</h1>
     </div>
-<form action="php/reset_password.php" method="post" onsubmit="return validateForm()" class="requires-validation" novalidate>
+<form action="../php/reset_password.php" id="formnewpass" method="post" onsubmit="return validateForm()" class="requires-validation" novalidate>
     <div class="mx-auto text-align">
         <div class="form-floating mb-2">
-            <input type="password" id="newPassword" class="form-control form-control-lg" id="validationServer01"
+            <input type="password" id="newPassword" name="password" class="form-control form-control-lg" id="validationServer01"
                 placeholder="New Password" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15"
                 required>
             <label for="validationServer01" class="form-label" style="color: gray;">New Password </label>
@@ -71,7 +71,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
         <div class="form-floating mb-2">
-            <input type="password" id="confirmPassword" class="form-control form-control-lg" id="validationServer02"
+            <input type="password" id="confirmPassword" name="confirm_password" class="form-control form-control-lg" id="validationServer02"
                 placeholder="Confirm Password" style="border-radius: 10px;" fdprocessedid="s1ri14" maxlength="15" required>
             <label for="validationServer02" class="form-label" style="color: gray;">Confirm Password</label>
             <span id="passwordMatch"></span>
@@ -107,45 +107,40 @@ if (isset($_SESSION['email'])) {
 
 <!-- Confirmation Script --> 
 <script>
-        const newPasswordInput = document.getElementById("newPassword");
-        const confirmPasswordInput = document.getElementById("confirmPassword");
-        const passwordMatchLabel = document.getElementById("passwordMatch");
+    const newPasswordInput = document.getElementById("newPassword");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+    const passwordMatchLabel = document.getElementById("passwordMatch");
+    const form = document.getElementById("formnewpass"); // Replace with your actual form ID
 
-        function validatePassword() {
-            const newPassword = newPasswordInput.value;
-            const confirmPassword = confirmPasswordInput.value;
+    function validatePassword() {
+        const newPassword = newPasswordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
 
-            if (newPassword !== confirmPassword) {
-                passwordMatchLabel.classList.remove("match");
-                passwordMatchLabel.classList.add("no-match");
-                passwordMatchLabel.textContent = "Passwords do not match";
-            } else {
-                passwordMatchLabel.classList.remove("no-match");
-                passwordMatchLabel.classList.add("match");
-                passwordMatchLabel.textContent = "Passwords match";
-            }
+        if (newPassword !== confirmPassword) {
+            passwordMatchLabel.classList.remove("match");
+            passwordMatchLabel.classList.add("no-match");
+            passwordMatchLabel.textContent = "Passwords do not match";
+        } else {
+            passwordMatchLabel.classList.remove("no-match");
+            passwordMatchLabel.classList.add("match");
+            passwordMatchLabel.textContent = "Passwords match";
+        }
+    }
+
+    function handleFormSubmission(event) {
+        validatePassword();
+
+        if (!form.checkValidity() || newPasswordInput.value !== confirmPasswordInput.value) {
+            event.preventDefault();
+            event.stopPropagation();
         }
 
-        newPasswordInput.addEventListener("input", validatePassword);
-        confirmPasswordInput.addEventListener("input", validatePassword);
-</script>
+        form.classList.add('was-validated');
+    }
 
-<!-- Validation Script -->
-<script>
-(function () {
-  'use strict';
-  const forms = document.querySelectorAll('.requires-validation');
-  Array.from(forms).forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      if (!form.checkValidity()) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
-      form.classList.add('was-validated');
-    }, false);
-  });
-})();
+    newPasswordInput.addEventListener("input", validatePassword);
+    confirmPasswordInput.addEventListener("input", validatePassword);
+    form.addEventListener('submit', handleFormSubmission);
 </script>
 
     <!-- JavaScript -->

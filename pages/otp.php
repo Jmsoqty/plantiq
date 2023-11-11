@@ -3,7 +3,7 @@ session_start();
 include '../php/userconfig.php';
 
 if (isset($_SESSION['otp'])) {
-    $otp = $_SESSION['otp'];
+   $otp = $_SESSION['otp'];
 }
 if (isset($_SESSION['email'])) {
     $email = $_SESSION['email'];
@@ -32,7 +32,6 @@ if (isset($_SESSION['email'])) {
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  
   <!-- Swiper CSS -->
   <link rel="stylesheet" href="../assets/css/swiper-bundle.min.css">
 
@@ -62,7 +61,7 @@ if (isset($_SESSION['email'])) {
         <h1>Forgot Password</h1>
     </div>
 
-    <form method="post" action="php/otp.php" class="requires-validation" novalidate>
+    <form method="post" action="../php/otp.php" class="requires-validation" novalidate>
         <div class="mx-auto text-center">
             <div  class="form-floating">
             <input type="hidden" name="correct_otp" value="<?php echo $otp; ?>">
@@ -85,22 +84,6 @@ if (isset($_SESSION['email'])) {
             </div>          
         </div>
     </form>
-
-    <?php
-        // Display error messages if they were passed in the URL
-        if (isset($_GET['errors'])) {
-            $errors = explode(',', $_GET['errors']);
-            foreach ($errors as $error) {
-                echo "<script>Swal.fire({
-                        icon: 'error',
-                        title: 'ERROR',
-                        text: '$error'
-                    });</script>";
-
-        }
-        unset($_GET['errors']);
-        }
-    ?>
 
     <div class="text-center" style="margin-top: 100px;">
         <label style="color: grey">You remember your account?</label>  <a href="../index.php" style="color: green">Login</a>
@@ -140,7 +123,7 @@ if (isset($_SESSION['email'])) {
         var wrongMessage = document.getElementById('wrongMessage');
         var correctMessage = document.getElementById('correctMessage');
 
-        if (codeInput === '1234') {
+        if (codeInput === '<?php echo $otp;?>') {
             wrongMessage.style.display = 'none';
             correctMessage.style.display = 'block';
             document.getElementById('code').setCustomValidity('');

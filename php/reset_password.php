@@ -8,7 +8,7 @@ $email = $_POST['email'];
 
 if ($password !== $confirm_password) {
     // OTPs do not match, display an error message
-    $errors[] = "Passwords do not match";
+    // $errors[] = "Passwords do not match";
 } else {
     // OTPs match, proceed to newpass.php
     $hash_password = md5($password);
@@ -19,10 +19,10 @@ if ($password !== $confirm_password) {
 
 }
 
-if (!empty($errors)) {
-    // Redirect back to the login page with the error messages
-    $errorString = implode(',', $errors);
-    header('Location: ../newpass.php?errors=' . urlencode($errorString));
-    exit();
-}
+// if (!empty($errors)) {
+//     // Redirect back to the login page with the error messages
+//     $errorString = implode(',', $errors);
+//     header('Location: ../newpass.php?errors=' . urlencode($errorString));
+//     exit();
+// }
 ?>

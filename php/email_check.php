@@ -1,4 +1,6 @@
 <?php
+session_start();
+include 'userconfig.php';
 // Include PHPMailer
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -7,9 +9,6 @@ use PHPMailer\PHPMailer\Exception;
 require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
 require '../phpmailer/src/Exception.php';
-
-session_start();
-include 'userconfig.php';
 
 $email = trim($_POST['email']);
 
@@ -31,7 +30,7 @@ if (mysqli_num_rows($result) > 0) {
     // You should store the OTP in the database or session for validation on the OTP page.
     $_SESSION['otp'] = $otp;
     $_SESSION['email'] = $email;
-    header('Location: ../otp.php');
+    header('Location: ../pages/otp.php');
     exit();
 } else {
     // Email does not exist, display SweetAlert or handle errors as needed
@@ -42,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
 if (!empty($errors)) {
     // Redirect back to the login page with the error messages
     $errorString = implode(',', $errors);
-    header('Location: ../forgotpass.php?errors=' . urlencode($errorString));
+    header('Location: ../pages/forgotpass.php?errors=' . urlencode($errorString));
     exit();
 }
 

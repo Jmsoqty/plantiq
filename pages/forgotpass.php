@@ -14,7 +14,7 @@ include '../php/userconfig.php';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plant.IQ | Change Username</title>
+  <title>Plant.IQ | Change Password</title>
   <link rel="icon" href="../assets/img/icon.png">
 
   <!-- Fonts -->
@@ -24,6 +24,7 @@ include '../php/userconfig.php';
   
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main Template -->
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
@@ -42,10 +43,10 @@ include '../php/userconfig.php';
         <h2>Forgot Password</h2>
     </div>
     
-    <form action="php/email_check.php" method="post" class="requires-validation" novalidate>
+    <form action="../php/email_check.php" method="post" class="requires-validation" novalidate>
         <div class="form-floating">
             <input type="email" name="email" class="form-control form-control-lg" id="validationServer01" placeholder="juandelacruz@gmail.com" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
-            <label for="validationServer01" class="form-label" style="color: gray;">juandelacruz@gmail.com</label>
+            <label for="validationServer01" class="form-label" style="color: gray;">Email</label>
             <div class="invalid-feedback">
                 Please enter valid email.
             </div>
@@ -65,27 +66,22 @@ include '../php/userconfig.php';
           <button type="submit" class="btn btn-primary btn-lg m-5 rounded-pill fw-bold" style="box-shadow: -4px 4px #3FAA3D;">Send OTP</button>
         </div>
     </form>
-    
-            <?php
-                 // Display error messages if they were passed in the URL
-                 if (isset($_GET['errors'])) {
-                     $errors = explode(',', $_GET['errors']);
-                     foreach ($errors as $error) {
-                         echo "<script>Swal.fire({
-                                icon: 'error',
-                                title: 'ERROR',
-                                text: '$error'
-                            });</script>";
+      <?php
+          // Display error messages if they were passed in the URL
+          if (isset($_GET['errors'])) {
+              $errors = explode(',', $_GET['errors']);
+              foreach ($errors as $error) {
+                  echo "<script>Swal.fire({
+                          icon: 'error',
+                          title: 'ERROR',
+                          text: '$error'
+                      });</script>";
 
-                }
-                unset($_GET['errors']);
-                }
-            ?>
+          }
+          unset($_GET['errors']);
+          }
+      ?>
         <div class="text-center ">
-            <div>
-                <label style="color: grey">Click here if you didn't receive a code:</label>  <a href="" style="color: green">Resend</a>
-            </div><br><br><br>
-            <div>
                 <label style="color: grey">You remember your account?</label>  <a href="../index.php" style="color: green">Login</a>
             </div>
         </div>  

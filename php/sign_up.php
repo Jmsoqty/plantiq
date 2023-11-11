@@ -18,7 +18,7 @@ if (isset($_POST['signup'])) {
     $_SESSION['fullname'] = $fullname;
     $_SESSION['username'] = $username;
     $_SESSION['email'] = "Email Already Existing!";
-    header("location: register.php");
+    header("location: ../pages/register.php");
     exit;
 } else {
     // If email does not exist, insert new user into the database
