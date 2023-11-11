@@ -1,5 +1,5 @@
 <?php 
-require_once('db-connect.php');
+require_once('userconfig.php');
 if(!isset($_GET['id'])){
     echo "<script> alert('Undefined Schedule ID.'); location.replace('../pages/calendar.php') </script>";
     $conn->close();

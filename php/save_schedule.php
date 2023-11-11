@@ -1,5 +1,5 @@
 <?php 
-require_once('db-connect.php');
+require_once('userconfig.php');
 if($_SERVER['REQUEST_METHOD'] !='POST'){
     echo "<script> alert('Error: No data to save.'); location.replace('../pages/calendar.php') </script>";
     $conn->close();

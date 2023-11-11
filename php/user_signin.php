@@ -58,25 +58,31 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['status'] = "Logged In";
-                header("Location: ../home.php");
+                header("Location: ../pages/home.php");
                 exit();
             } else {
-                $errors[] = "Invalid Credentials!";
+                // $errors[] = "Invalid Credentials!";
+                header('Location: ../index.php');
+                exit();
             }
         } else {
-            $errors[] = "Username not found. Please try again!";
+            // $errors[] = "Username not found. Please try again!";
+            header('Location: ../index.php');
+            exit();
         }
     } else {
-        $errors[] = "Something went wrong. Please try again later.";
-    }
-
-    // check for errors
-    if (!empty($errors)) {
-        // Redirect back to the login page with the error messages
-        $errorString = implode(',', $errors);
-        header('Location: ../index.php?errors=' . urlencode($errorString));
+        // $errors[] = "Something went wrong. Please try again later.";
+        header('Location: ../index.php');
         exit();
     }
+
+    // // check for error
+    // if (!empty($errors)) {
+    //     // Redirect back to the login page with the error messages
+    //     $errorString = implode(',', $errors);
+    //     header('Location: ../index.php?errors=' . urlencode($errorString));
+    //     exit();
+    // }
 } else {
     // if the username or password is not set, redirect back to the login page
     header('Location: ../index.php');

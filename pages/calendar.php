@@ -1,4 +1,4 @@
-<?php require_once('../php/db-connect.php') ?>
+<?php require_once('../php/userconfig.php') ?>
 
 <!DOCTYPE html>
 <html lang="en">
