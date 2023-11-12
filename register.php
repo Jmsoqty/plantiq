@@ -14,6 +14,7 @@ $username = isset($_SESSION['username']) ? $_SESSION['username'] : '';
 $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
 
 // Clear the session variables
+unset($_SESSION['fullname']);
 unset($_SESSION['username']);
 unset($_SESSION['email']);
 ?>
@@ -63,7 +64,16 @@ unset($_SESSION['email']);
             <h3 class="fw-bold mb-4">Register your Account</h3>
 
             <div class="form-floating mb-2 text-start rounded-4">
-                <input type="text" id="textInput" class="form-control rounded-4" id="floatingInput" placeholder="Username" name="fullname" autocomplete="off" maxlength="20" required value="<?php echo $fullname; ?>">
+                <input type="text" id="textInput" class="form-control rounded-4" id="floatingInput" placeholder="Fullname" name="fullname" autocomplete="off" maxlength="20" required value="<?php echo $fullname; ?>">
+                <label for="validationServer01" class="form-label">Fullname</label>
+                <div class="invalid-feedback">
+                </div>
+                <span id="validationMessage" style="color: red;"></span>
+
+            </div>
+
+            <div class="form-floating mb-2 text-start rounded-4">
+                <input type="text" id="textInput" class="form-control rounded-4" id="floatingInput" placeholder="Username" name="username" autocomplete="off" maxlength="20" required value="<?php echo $username; ?>">
                 <label for="validationServer01" class="form-label">Username</label>
                 <div class="invalid-feedback">
                 </div>
@@ -72,13 +82,13 @@ unset($_SESSION['email']);
             </div>
 
             <div class="form-floating mb-2 text-start rounded-4" id="emailForm">
-                <input type="text" id="emailInput" class="form-control rounded-4" id="floatingInput" placeholder="Email" name="email" autocomplete="" required value="<?php echo $email; ?>">
+                <input type="text" id="emailInput" class="form-control rounded-4" id="floatingInput" placeholder="Email" name="email" autocomplete="" required>
                 <label for="emailInput" class="form-label">Email</label>
-                <span id="emailStatus"></span>
+                <span style="color: red;"><?php echo $email; ?></span>
             </div>
 
             <div class="form-floating mb-2 text-start rounded-4">
-                <input type="password" id="newPassword" class="form-control rounded-4" id="floatingPassword" name="password" placeholder="Password" maxlength="15" required>
+                <input type="password" id="newPassword" class="form-control rounded-4" id="floatingPassword" name="password" placeholder="Password" minlenth="10" maxlength="15" required>
                 <label for="floatingPassword">Password</label>
                 <!-- <i class="fa-solid fa-eye" id="togglePassword" data-toggle="tooltip" data-placement="right" title="Show/Hide password" style="cursor: pointer"></i> -->
                 <div class="invalid-feedback mb-2">
@@ -87,13 +97,13 @@ unset($_SESSION['email']);
             </div>
 
             <div class="form-floating mb-2 text-start rounded-4">
-                <input type="password" id="confirmPassword" class="form-control rounded-4" name="confirm_password" id="floatingPassword" placeholder="ConfirmPassword" maxlength="15" required>
+                <input type="password" id="confirmPassword" class="form-control rounded-4" name="confirm_password" id="floatingPassword" placeholder="ConfirmPassword" minlenth="10" maxlength="15" required>
                 <label for="floatingconpassword" class="form-label">Confirm Password</label>
                 <span id="passwordMatch"></span>
 
             </div>
             
-            <button type="submit" class="btn btn-primary btn-lg rounded-pill w-50 mt-2" style="box-shadow: -4px 4px #3FAA3D;">Register Account</button>
+            <button type="submit" class="btn btn-primary btn-lg rounded-pill w-50 mt-2" style="box-shadow: -4px 4px #3FAA3D;" name="signup">Register Account</button>
             <h5 class="text-center my-3">or</h5>
  
             <div class="d-flex justify-content-center">
@@ -115,18 +125,6 @@ unset($_SESSION['email']);
   </section>
 </form>
 
-
-<script>
-  const fullNameInput = document.querySelector('input[name="fullname"]');
-      fullNameInput.addEventListener('keypress', function(event) {
-          const key = event.key;
-          const regex = /[a-z A-Z]/;
-      if (!regex.test(key)) {
-            event.preventDefault();
-        }
-  });
-</script>
-
 <!-- Username Script -->
 <script>
     const textInput = document.getElementById("textInput");
@@ -140,13 +138,15 @@ unset($_SESSION['email']);
 
         if (!regex.test(inputValue)) {
             validationMessage.textContent = "Special characters are not allowed.";
+            return false; // Added to prevent submission
         } else {
             validationMessage.textContent = "";
+            return true; // Added to allow submission
         }
     }
 
     textInput.addEventListener("input", validateInput);
-  </script>
+</script>
 
 <!-- Email Script -->
 <script>
@@ -180,30 +180,40 @@ unset($_SESSION['email']);
   });
 </script>
 
-
 <!-- NewPass and ConfirmPass Script -->
 <script>
-        const newPasswordInput = document.getElementById("newPassword");
-        const confirmPasswordInput = document.getElementById("confirmPassword");
-        const passwordMatchLabel = document.getElementById("passwordMatch");
+    const newPasswordInput = document.getElementById("newPassword");
+    const confirmPasswordInput = document.getElementById("confirmPassword");
+    const passwordMatchLabel = document.getElementById("passwordMatch");
 
-        function validatePassword() {
-            const newPassword = newPasswordInput.value;
-            const confirmPassword = confirmPasswordInput.value;
+    function validatePassword() {
+        const newPassword = newPasswordInput.value;
+        const confirmPassword = confirmPasswordInput.value;
 
-            if (newPassword !== confirmPassword) {
-                passwordMatchLabel.classList.remove("match");
-                passwordMatchLabel.classList.add("no-match");
-                passwordMatchLabel.textContent = "Passwords do not match";
-            } else {
-                passwordMatchLabel.classList.remove("no-match");
-                passwordMatchLabel.classList.add("match");
-                passwordMatchLabel.textContent = "Passwords match";
-            }
+        if (newPassword !== confirmPassword) {
+            passwordMatchLabel.classList.remove("match");
+            passwordMatchLabel.classList.add("no-match");
+            passwordMatchLabel.textContent = "Passwords do not match";
+            return false; // Added to prevent submission
+        } else {
+            passwordMatchLabel.classList.remove("no-match");
+            passwordMatchLabel.classList.add("match");
+            passwordMatchLabel.textContent = "Passwords match";
+            return true; // Added to allow submission
         }
+    }
 
-        newPasswordInput.addEventListener("input", validatePassword);
-        confirmPasswordInput.addEventListener("input", validatePassword);
+    newPasswordInput.addEventListener("input", validatePassword);
+    confirmPasswordInput.addEventListener("input", validatePassword);
+</script>
+
+<!-- Form Script -->
+<script>
+    function validateForm() {
+        // Add additional validation logic here if needed
+        // If any validation fails, return false to prevent form submission
+        return validateInput() && validateEmail() && validatePassword();
+    }
 </script>
 
 
