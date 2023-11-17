@@ -30,7 +30,7 @@ include './php/userconfig.php';
 
   <!-- Main Template -->
   <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./assets/css/styles.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
@@ -51,17 +51,17 @@ include './php/userconfig.php';
             </div>
 
             <div class="form-floating mb-3 text-start rounded-4" style="position: relative;">
-              <input type="password" class="form-control" name="password" placeholder="Password" value="<?php if(isset($_COOKIE['qbtuyqug'])) echo $_SESSION['qbtuyqug']; ?>" required>
-              <label for="password">Password</label>
+              <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" value="<?php if(isset($_COOKIE['qbtuyqug'])) echo $_SESSION['qbtuyqug']; ?>" required>
+              <label for="floatingPassword">Password</label>
               <span class="toggle-password mt-1" id="togglePassword"><i class="fa-regular fa-eye"></i></span>
             </div>
 
             <div class="my-3 d-flex justify-content-between">
               <label>
-                  <input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE['fnbkn'])) echo "checked='checked'"; ?>> Remember me
+                <input type="checkbox" name="remember" id="remember" <?php if(isset($_COOKIE['fnbkn'])) echo "checked='checked'"; ?>> Remember me
               </label>
               <a href="pages/forgotpass.php" class="text-decoration-none text-secondary">Forgot password?</a>
-          </div>
+            </div>
 
             <button type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50 mt-5" style="box-shadow: -4px 4px #3FAA3D;">Log In</button>
 
@@ -114,12 +114,12 @@ const passwordInput = document.getElementById('floatingPassword');
 const togglePassword = document.getElementById('togglePassword');
 
 togglePassword.addEventListener('click', () => {
-  if (passwordInput.type === 'password') {
-    passwordInput.type = 'text';
-    togglePassword.innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
-  } else {
-    passwordInput.type = 'password';
-    togglePassword.innerHTML = '<i class="fa-regular fa-eye"></i>';
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        togglePassword.innerHTML = '<i class="fa-regular fa-eye-slash"></i>';
+    } else {
+      passwordInput.type = 'password';
+      togglePassword.innerHTML = '<i class="fa-regular fa-eye"></i>';
   }
 });
 
