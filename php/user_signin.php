@@ -58,7 +58,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];
                 $_SESSION['status'] = "Logged In";
-                header("Location: ../pages/home.php");
+                header("Location: ../pages/adddevice.php");
                 exit();
             } else {
                 $errors[] = "Invalid Credentials!";
