@@ -97,10 +97,10 @@
           <div class="bg-image swiper-slide">
               <div class="image-content">
                   <span class="overlay">  
-                      <img src="../assets/img/carrot.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
+                      <img src="../assets/img/bellpepper.avif" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Carrot
+                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Bell Pepper
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
@@ -113,7 +113,7 @@
                       <img src="../assets/img/sili.png" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Sili
+                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Chili
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
@@ -123,10 +123,10 @@
           <div class="bg-image swiper-slide">
               <div class="image-content">
                   <span class="overlay">  
-                      <img src="../assets/img/garlic.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
+                      <img src="../assets/img/eggplant.png" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Garlic
+                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Eggplant
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
@@ -136,10 +136,10 @@
           <div class="bg-image swiper-slide">
               <div class="image-content">
                   <span class="overlay">  
-                      <img src="../assets/img/cabbage.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
+                      <img src="../assets/img/okra.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Cabbage
+                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Okra
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
@@ -149,10 +149,10 @@
           <div class="bg-image swiper-slide">
               <div class="image-content">
                   <span class="overlay">  
-                      <img src="../assets/img/potato.png" alt="" class="img-fluid rounded" style="height: 300px;">
+                      <img src="../assets/img/pakchoi.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Potato
+                          <button class="btn btn-outline-primary fw-bold " id="btn-plant">Pakchoi
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
@@ -162,10 +162,10 @@
           <div class="bg-image swiper-slide">
               <div class="image-content">
                   <span class="overlay">  
-                      <img src="../assets/img/brocoli.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
+                      <img src="../assets/img/spinach.jpg" alt="" class="img-fluid rounded" style="height: 300px;">
                       <!-- Add a span or button inside the overlay -->
                       <div class="inner-div" style="mt-2">
-                          <button class="btn btn-outline-primary fw-bold" id="btn-plant">Brocoli
+                          <button class="btn btn-outline-primary fw-bold" id="btn-plant">Spinach
                           <br><span id="span-date">Transfer in: 2 days</span></button>
                       </div>
                   </span>
