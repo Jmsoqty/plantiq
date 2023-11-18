@@ -5,6 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plant.IQ | Add Device </title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+  <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
   <link rel="icon" href="../assets/img/icon.png">
 
   <link rel="icon" href="../assets/img/icon.png">
@@ -48,7 +52,7 @@
                 </div>
                 <h4 class="card-title mb-4">Enter MAC Address</h2>
           <div class="mb-4 form-floating">
-            <input type="password" class="form-control form-control-lg" id="validationServer01" placeholder="Password" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
+            <input type="text" name="text" id="text"  class="form-control form-control-lg" id="validationServer01" style="border-radius: 10px;" fdprocessedid="s1ri14" required>
             <label for="validationServer01" class="form-label" style="color: gray;">Input Password</label>
             <div class="valid-feedback">
               Looks good!
@@ -58,7 +62,7 @@
             </div>
           </div>
 
-          <button type="submit" type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50" style="box-shadow: -4px 4px #3FAA3D;">Connect</button>
+          <button type="submit" type="submit" class="btn btn-primary btn-lg m-3 rounded-pill fw-bold w-50" style="box-shadow: -4px 4px #3FAA3D;"data-bs-toggle="modal" data-bs-target="#modal2">Connect</button>
         
         </div>
       </div>
@@ -296,12 +300,13 @@
       <div class="text-center fw-bold">
           Scan the QR Code
         <br> <br>
-      <img src="../assets/img/scanner.png" alt="" class="img-fluid rounded" style="height: 150px;">
+        <video id="preview" width="100%"></video>
+      <!-- <img src="../assets/img/scanner.png" alt="" class="img-fluid rounded" style="height: 150px;"> -->
        <br>
       </div>
       <div class="d-flex justify-content-around mt-5">
         <button type="button" class="btn btn-danger rounded-pill" data-bs-dismiss="modal">Close</button>
-        <a href="" class="btn btn-primary rounded-pill ms-2" data-bs-toggle="modal" data-bs-target="#modal2">Connect</a>
+        <!-- <a href="" class="btn btn-primary rounded-pill ms-2" data-bs-toggle="modal" data-bs-target="#modal2">Connect</a> -->
       </div>
     </div>
   </div>
@@ -411,6 +416,22 @@
   <!-- BOTTOM NAVBAR -->
   <?php include '../pages/components/navbar-bottom.php'; ?>
 
+  <script>
+    let scanner = new Instascan.Scanner({video: document.getElementById('preview')});
+    Instascan.Camera.getCameras().then(function(cameras){
+      if(cameras.length > 0){
+        scanner.start(cameras[0]);
+      }else{
+        alert('No cameras found');
+      }
+    }).catch(function(e){
+      console.error(e);
+    });
+
+    scanner.addListener('scan',function(c){
+      document.getElementById('text').value=c;
+    });
+    </script>
 <script>
   
 (function () {
